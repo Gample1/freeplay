@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FREEPLAY — Unblocked Games</title>
+<meta name="description" content="Free unblocked games you can play anywhere. No sign up required.">
+
+<!--
+  ============================================================
+  GOOGLE ADSENSE — SETUP INSTRUCTIONS
+  ============================================================
+  1. Go to https://adsense.google.com and sign up
+  2. Add your website URL and wait for approval (a few days)
+  3. Once approved, replace YOUR-PUBLISHER-ID below with your
+     real ID (looks like: ca-pub-1234567890123456)
+  4. Replace each YOUR-AD-SLOT-ID with your real ad slot IDs
+  5. Uncomment the <script> tag below to activate ads
+  ============================================================
+-->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR-PUBLISHER-ID" crossorigin="anonymous"></script> -->
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;
+  --border:rgba(255,255,255,0.07);
+  --neon:#00f5c4;--neon2:#7c5cfc;--neon3:#ff4d6d;
+  --text:#e8e8f0;--muted:#7070a0;
+}
+html,body{min-height:100vh;}
+body{font-family:'Space Mono',monospace;background:var(--bg);color:var(--text);}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9;}
+
+.ad-slot{background:rgba(255,255,255,0.02);border:1px dashed rgba(255,255,255,0.08);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:8px;}
+.ad-top{width:100%;height:90px;}
+.ad-between{width:100%;height:90px;margin:0 0 1.5rem;}
+.ad-label{font-size:0.55rem;letter-spacing:1px;color:var(--muted);opacity:0.5;margin-bottom:3px;text-align:center;}
+.ad-banner-wrap{padding:0.6rem 2rem;border-bottom:1px solid var(--border);}
+
+.page{display:flex;flex-direction:column;min-height:100vh;}
+.body-wrap{display:flex;flex:1;}
+.sidebar{width:180px;flex-shrink:0;padding:1.5rem 1rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:1rem;}
+.sidebar-ad{width:160px;height:600px;align-self:flex-start;position:sticky;top:1rem;}
+.content-area{flex:1;min-width:0;}
+
+header{padding:1.2rem 2rem 1rem;border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(0,245,196,0.04) 0%,transparent 100%);}
+.logo-row{display:flex;align-items:baseline;gap:14px;}
+.logo{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:900;letter-spacing:6px;color:var(--neon);text-shadow:0 0 20px rgba(0,245,196,0.5),0 0 60px rgba(0,245,196,0.2);}
+.logo span{color:var(--neon2);}
+.game-count{font-size:0.65rem;color:var(--muted);letter-spacing:2px;border:1px solid var(--border);border-radius:4px;padding:3px 8px;white-space:nowrap;}
+.game-count b{color:var(--neon);}
+.tagline{font-size:0.65rem;color:var(--muted);letter-spacing:3px;margin-top:3px;text-transform:uppercase;}
+.header-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1rem;}
+.search-wrap{position:relative;flex:1;max-width:380px;}
+.search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none;line-height:1;}
+.search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0.6rem 1rem 0.6rem 2.2rem;color:var(--text);font-family:'Space Mono',monospace;font-size:0.78rem;outline:none;transition:border-color 0.2s;}
+.search-wrap input:focus{border-color:var(--neon);}
+.search-wrap input::placeholder{color:var(--muted);}
+
+.cats{display:flex;gap:8px;padding:1rem 2rem;overflow-x:auto;border-bottom:1px solid var(--border);scrollbar-width:none;}
+.cats::-webkit-scrollbar{display:none;}
+.cat{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:5px 14px;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;white-space:nowrap;color:var(--muted);transition:all 0.15s;font-family:'Space Mono',monospace;}
+.cat.active,.cat:hover{border-color:var(--neon);color:var(--neon);background:rgba(0,245,196,0.07);}
+.cat.fav-tab.active,.cat.fav-tab:hover{border-color:#f0a500;color:#f0a500;background:rgba(240,165,0,0.07);}
+
+main{padding:1.5rem 2rem;}
+.section-title{font-family:'Orbitron',sans-serif;font-size:0.72rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:1rem;}
+.section-title span{color:var(--neon);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-bottom:1.5rem;}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all 0.2s;animation:fadeIn 0.3s ease both;position:relative;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card:hover{border-color:rgba(0,245,196,0.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.4),0 0 0 1px rgba(0,245,196,0.1);}
+.fav-btn{position:absolute;top:8px;right:8px;z-index:2;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:4px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all 0.15s;color:#7070a0;}
+.fav-btn:hover{background:rgba(240,165,0,0.2);border-color:#f0a500;}
+.fav-btn.active{color:#f0a500;border-color:#f0a500;background:rgba(240,165,0,0.15);}
+.card-thumb{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.card-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--surface) 0%,transparent 60%);}
+.thumb-emoji{font-size:3rem;position:relative;z-index:1;}
+.card-info{padding:10px 12px 12px;}
+.card-name{font-size:0.82rem;font-weight:700;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.card-meta{display:flex;align-items:center;justify-content:space-between;}
+.card-cat{font-size:0.62rem;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
+.card-stars{font-size:0.62rem;color:#f0a500;}
+.play-btn{width:100%;margin-top:8px;background:rgba(0,245,196,0.1);border:1px solid rgba(0,245,196,0.3);border-radius:4px;padding:6px;color:var(--neon);font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:2px;cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
+.play-btn:hover{background:rgba(0,245,196,0.2);border-color:var(--neon);}
+.no-results{text-align:center;padding:3rem;color:var(--muted);font-size:0.8rem;letter-spacing:2px;grid-column:1/-1;}
+.no-results .icon{display:block;font-size:2rem;margin-bottom:1rem;}
+
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:100;align-items:center;justify-content:center;padding:1rem;}
+.modal-bg.open{display:flex;}
+.modal{background:var(--surface2);border:1px solid rgba(0,245,196,0.2);border-radius:10px;width:100%;max-width:920px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 0 60px rgba(0,245,196,0.1);height:88vh;}
+.modal.is-fullscreen{max-width:100%;border-radius:0;height:100vh;}
+.modal-bg.is-fullscreen-bg{padding:0;}
+.modal-header{padding:0.7rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);gap:8px;flex-shrink:0;}
+.modal-title{font-family:'Orbitron',sans-serif;font-size:0.85rem;letter-spacing:3px;color:var(--neon);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.modal-controls{display:flex;gap:6px;flex-shrink:0;}
+.ctrl-btn{background:none;border:1px solid var(--border);border-radius:4px;color:var(--muted);font-family:'Space Mono',monospace;font-size:0.65rem;padding:4px 10px;cursor:pointer;letter-spacing:1px;transition:all 0.15s;white-space:nowrap;}
+.ctrl-btn:hover{border-color:var(--neon);color:var(--neon);}
+.ctrl-btn.close-btn:hover{border-color:var(--neon3);color:var(--neon3);}
+.modal iframe{flex:1;border:none;background:#000;width:100%;}
+
+footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);color:var(--muted);font-size:0.62rem;letter-spacing:2px;}
+
+@media(max-width:640px){
+  .sidebar{display:none;}
+  header,main{padding:1rem;}
+  .cats,.ad-banner-wrap{padding:0.8rem 1rem;}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="ad-banner-wrap">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-slot ad-top">
+      <!--
+        PASTE ADSENSE TOP BANNER CODE HERE AFTER APPROVAL:
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-YOUR-PUBLISHER-ID"
+             data-ad-slot="YOUR-AD-SLOT-ID-TOP"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+      [ TOP BANNER AD — ACTIVATE AFTER ADSENSE APPROVAL ]
+    </div>
+  </div>
+
+  <header>
+    <div class="logo-row">
+      <div class="logo">FREE<span>PLAY</span></div>
+      <div class="game-count" id="game-count"><b>0</b> GAMES</div>
+    </div>
+    <div class="tagline">Unblocked · Always Free · No Sign Up</div>
+    <div class="header-row">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="search" placeholder="Search games..." oninput="filterGames()">
+      </div>
+    </div>
+  </header>
+
+  <div class="cats">
+    <div class="cat active" onclick="setCategory('all',this)">All</div>
+    <div class="cat fav-tab" onclick="setCategory('favs',this)">★ Favorites</div>
+    <div class="cat" onclick="setCategory('action',this)">Action</div>
+    <div class="cat" onclick="setCategory('puzzle',this)">Puzzle</div>
+    <div class="cat" onclick="setCategory('arcade',this)">Arcade</div>
+    <div class="cat" onclick="setCategory('idle',this)">Idle</div>
+    <div class="cat" onclick="setCategory('strategy',this)">Strategy</div>
+  </div>
+
+  <div class="body-wrap">
+    <div class="sidebar">
+      <div class="ad-label">Advertisement</div>
+      <div class="ad-slot sidebar-ad">
+        <!--
+          PASTE ADSENSE SIDEBAR CODE HERE AFTER APPROVAL:
+          <ins class="adsbygoogle" style="display:block"
+               data-ad-client="ca-pub-YOUR-PUBLISHER-ID"
+               data-ad-slot="YOUR-AD-SLOT-ID-SIDEBAR"
+               data-ad-format="auto"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        [ SIDEBAR AD ]
+      </div>
+    </div>
+
+    <div class="content-area">
+      <main>
+        <div class="section-title" id="section-label">ALL GAMES <span>►</span></div>
+        <div class="grid" id="game-grid"></div>
+
+        <div id="mid-ad-wrap" style="display:none;">
+          <div class="ad-label">Advertisement</div>
+          <div class="ad-slot ad-between">
+            <!--
+              PASTE ADSENSE MID-PAGE CODE HERE AFTER APPROVAL:
+              <ins class="adsbygoogle" style="display:block"
+                   data-ad-client="ca-pub-YOUR-PUBLISHER-ID"
+                   data-ad-slot="YOUR-AD-SLOT-ID-MID"
+                   data-ad-format="auto" data-full-width-responsive="true"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            -->
+            [ MID-PAGE AD — ACTIVATE AFTER ADSENSE APPROVAL ]
+          </div>
+        </div>
+
+        <div class="grid" id="game-grid-2"></div>
+      </main>
+    </div>
+  </div>
+
+  <footer>FREEPLAY · ALWAYS FREE · NO SIGN UP REQUIRED · &copy; 2026</footer>
+</div>
+
+<div class="modal-bg" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modal-inner">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title">GAME</div>
+      <div class="modal-controls">
+        <button class="ctrl-btn" onclick="toggleFullscreen()" id="fs-btn">⛶ FULLSCREEN</button>
+        <button class="ctrl-btn close-btn" onclick="closeModal(null)">✕ CLOSE</button>
+      </div>
+    </div>
+    <iframe id="modal-frame" src="" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+/*
+  ================================================================
+  HOW TO ADD GAMES
+  ================================================================
+  1. Download a free HTML5 game (from itch.io, github, etc.)
+  2. Unzip it into a folder inside ~/freeplay/games/
+     e.g. ~/freeplay/games/snake/
+  3. Find the main HTML file inside (usually index.html)
+  4. Add a line to the GAMES array below:
+     { name:"Snake", cat:"arcade", emoji:"🐍", stars:"★★★★☆", path:"games/snake/index.html", bg:"#0f2a1a" },
+
+  CATEGORIES: action, puzzle, arcade, idle, strategy
+
+  BG COLOR: any dark hex color for the card thumbnail background
+
+  WHERE TO GET FREE HTML5 GAMES:
+  - https://itch.io  (filter: HTML, free, downloadable)
+  - https://js13kgames.com  (all tiny open source JS games)
+  - https://github.com  (search: html5 game open source)
+  ================================================================
+*/
+
+const GAMES = [
+  { name:"2048", cat:"puzzle", emoji:"🔢", stars:"★★★★★", path:"games/2048/index.html", bg:"#1a1a2e" },
+  // ADD MORE GAMES HERE — copy the line above and change the details
+];
+
+let activeCategory = 'all';
+let favs = JSON.parse(localStorage.getItem('fp_favs') || '[]');
+let isFS = false;
+
+function saveFavs(){ localStorage.setItem('fp_favs', JSON.stringify(favs)); }
+
+function setCategory(cat, el){
+  activeCategory = cat;
+  document.querySelectorAll('.cat').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  const label = document.getElementById('section-label');
+  if(cat==='favs') label.innerHTML='FAVORITES <span>★</span>';
+  else if(cat==='all') label.innerHTML='ALL GAMES <span>►</span>';
+  else label.innerHTML=cat.toUpperCase()+' <span>►</span>';
+  filterGames();
+}
+
+function filterGames(){
+  const q = document.getElementById('search').value.toLowerCase();
+  let list = [...GAMES];
+  if(activeCategory==='favs') list = GAMES.filter(g => favs.includes(g.name));
+  else if(activeCategory!=='all') list = GAMES.filter(g => g.cat===activeCategory);
+  if(q) list = list.filter(g => g.name.toLowerCase().includes(q) || g.cat.includes(q));
+
+  document.getElementById('game-count').innerHTML = `<b>${list.length}</b> GAME${list.length!==1?'S':''}`;
+
+  const mid = Math.ceil(list.length / 2);
+  renderGrid(list.slice(0, mid), 'game-grid');
+  renderGrid(list.slice(mid), 'game-grid-2');
+  document.getElementById('mid-ad-wrap').style.display = list.length > 8 ? 'block' : 'none';
+
+  if(activeCategory==='favs' && favs.length===0){
+    document.getElementById('game-grid').innerHTML='<div class="no-results"><span class="icon">★</span>NO FAVORITES YET<br><br>TAP THE STAR ON ANY GAME</div>';
+    document.getElementById('game-grid-2').innerHTML='';
+  }
+}
+
+function toggleFav(name, e){
+  e.stopPropagation();
+  favs = favs.includes(name) ? favs.filter(f=>f!==name) : [...favs, name];
+  saveFavs();
+  filterGames();
+}
+
+function renderGrid(games, gridId){
+  const grid = document.getElementById(gridId);
+  if(!games.length){ grid.innerHTML=''; return; }
+  grid.innerHTML = games.map((g,i) => {
+    const isFav = favs.includes(g.name);
+    return `<div class="card" style="animation-delay:${i*40}ms">
+      <button class="fav-btn ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
+      <div class="card-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
+        <span class="thumb-emoji">${g.emoji}</span>
+      </div>
+      <div class="card-info">
+        <div class="card-name">${g.name}</div>
+        <div class="card-meta">
+          <span class="card-cat">${g.cat}</span>
+          <span class="card-stars">${g.stars}</span>
+        </div>
+        <button class="play-btn" onclick="openGame('${g.name}','${g.path}')">▶ PLAY</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openGame(name, path){
+  document.getElementById('modal-title').textContent = name.toUpperCase();
+  document.getElementById('modal-frame').src = path;
+  document.getElementById('modal').classList.add('open');
+  isFS = false;
+  document.getElementById('modal-inner').classList.remove('is-fullscreen');
+  document.getElementById('modal').classList.remove('is-fullscreen-bg');
+  document.getElementById('fs-btn').textContent = '⛶ FULLSCREEN';
+}
+
+function toggleFullscreen(){
+  isFS = !isFS;
+  document.getElementById('modal-inner').classList.toggle('is-fullscreen', isFS);
+  document.getElementById('modal').classList.toggle('is-fullscreen-bg', isFS);
+  document.getElementById('fs-btn').textContent = isFS ? '⛶ EXIT FULL' : '⛶ FULLSCREEN';
+}
+
+function closeModal(e){
+  if(e && e.target!==document.getElementById('modal')) return;
+  document.getElementById('modal').classList.remove('open','is-fullscreen-bg');
+  document.getElementById('modal-inner').classList.remove('is-fullscreen');
+  document.getElementById('modal-frame').src = '';
+  isFS = false;
+}
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(null); });
+
+filterGames();
+</script>
+</body>
+</html>
