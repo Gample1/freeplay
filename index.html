@@ -84,10 +84,10 @@ main{padding:1.5rem 2rem;}
 .play-btn:hover{background:rgba(0,245,196,0.2);border-color:var(--neon);}
 
 .series-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;animation:fadeIn 0.3s ease both;grid-column:1/-1;}
-.series-card-header{display:flex;align-items:center;gap:12px;padding:18px 16px;cursor:pointer;transition:background 0.15s;user-select:none;position:relative;min-height:80px;}
-.series-card-header .series-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
-.series-card-header .series-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);z-index:1;}
-.series-card-header:hover .series-overlay{background:rgba(0,0,0,0.5);}
+.series-card-header{display:flex;align-items:center;gap:12px;padding:18px 16px;cursor:pointer;transition:all 0.2s;user-select:none;position:relative;min-height:80px;}
+.series-card-header .series-bg{position:absolute;inset:0;z-index:0;border-radius:8px 8px 0 0;}
+.series-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.2);z-index:1;border-radius:8px 8px 0 0;}
+.series-card-header:hover .series-overlay{background:rgba(0,0,0,0.1);}
 .series-emoji{font-size:1.8rem;position:relative;z-index:2;}
 .series-info{flex:1;position:relative;z-index:2;}
 .series-title{font-family:'Orbitron',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:3px;margin-bottom:3px;}
@@ -488,13 +488,13 @@ function renderGameCard(g, i){
 
 function renderSeriesCard(s, si, i){
   const isOpen = seriesOpen[si]===true;
-  const bgStyle = s.thumb ? `background-image:url(thumbs/${s.thumb});background-size:cover;background-position:center;` : `background:${s.bg};`;
+const bgStyle = `background:${s.bg};border-left:4px solid ${s.color};`;
   const gamesHtml = s.games.map(g => {
     const isFav = favs.includes(g.name);
     return `<div class="series-mini-card">
       <button class="mini-fav ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
       <div class="mini-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
-        ${g.thumb?`<img src="thumbs/${g.thumb}" alt="${g.name}" loading="lazy">`:`<span class="mini-emoji">${g.emoji}</span>`}
+     <span class="mini-emoji">${g.emoji}</span>
       </div>
       <div class="mini-info">
         <div class="mini-name">${g.name}</div>
