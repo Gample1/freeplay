@@ -316,8 +316,9 @@ const GAMES = [
 ];
 
 const SERIES = [
+ const SERIES = [
   {
-    name:"Vex Series", emoji:"🏃", color:"#7c5cfc", bg:"#0a0a2a",
+    name:"Vex Series", emoji:"🏃", color:"#7c5cfc", bg:"#0a0a2a", thumb:"vex.png",
     games:[
       { name:"Vex 3", emoji:"🏃", stars:"★★★★☆", path:"games/vex3/index.html", bg:"#0a0a2a", thumb:"vex.png" },
       { name:"Vex 4", emoji:"🏃", stars:"★★★★☆", path:"games/vex4/index.html", bg:"#0a0a2a", thumb:"vex.png" },
@@ -326,8 +327,8 @@ const SERIES = [
       { name:"Vex 7", emoji:"🏃", stars:"★★★★★", path:"games/vex7/index.html", bg:"#0a0a2a", thumb:"vex.png" },
     ]
   },
-  {
-    name:"Duck Life Series", emoji:"🦆", color:"#f0a500", bg:"#1a2a0a",
+ {
+    name:"Duck Life Series", emoji:"🦆", color:"#f0a500", bg:"#1a2a0a", thumb:"ducklife.png",
     games:[
       { name:"Duck Life 1", emoji:"🦆", stars:"★★★★☆", path:"games/ducklife1/index.html", bg:"#1a2a0a", thumb:"ducklife.png" },
       { name:"Duck Life 2", emoji:"🦆", stars:"★★★★☆", path:"games/ducklife2/index.html", bg:"#1a2a0a", thumb:"ducklife.png" },
@@ -336,7 +337,7 @@ const SERIES = [
     ]
   },
   {
-    name:"Moto X3M Series", emoji:"🏍️", color:"#ff4d6d", bg:"#2a0a0a",
+    name:"Moto X3M Series", emoji:"🏍️", color:"#ff4d6d", bg:"#2a0a0a", thumb:"motox3m.png",
     games:[
       { name:"Moto X3M",        emoji:"🏍️", stars:"★★★★★", path:"games/motox3m/index.html",        bg:"#2a0a0a", thumb:"motox3m.png" },
       { name:"Moto X3M 2",      emoji:"🏍️", stars:"★★★★★", path:"games/motox3m2/index.html",       bg:"#2a0a0a", thumb:"motox3m.png" },
@@ -344,8 +345,8 @@ const SERIES = [
       { name:"Moto X3M Winter", emoji:"❄️", stars:"★★★★☆", path:"games/motox3m-winter/index.html", bg:"#0a1a2a", thumb:"motox3m.png" },
     ]
   },
-  {
-    name:"Bad Ice Cream Series", emoji:"🍦", color:"#00f5c4", bg:"#0a1a2a",
+ {
+    name:"Bad Ice Cream Series", emoji:"🍦", color:"#00f5c4", bg:"#0a1a2a", thumb:"bad-ice-cream.png",
     games:[
       { name:"Bad Ice Cream",   emoji:"🍦", stars:"★★★★☆", path:"games/bad-ice-cream/index.html",   bg:"#0a1a2a", thumb:"bad-ice-cream.png" },
       { name:"Bad Ice Cream 2", emoji:"🍦", stars:"★★★★☆", path:"games/bad-ice-cream-2/index.html", bg:"#0a1a2a", thumb:"bad-ice-cream.png" },
@@ -523,8 +524,9 @@ function renderSeriesCard(s, si, i){
   }).join('');
 
   return `<div class="series-card" style="animation-delay:${i*40}ms">
-    <div class="series-card-header" onclick="toggleSeries(${si})">
-      <span class="series-emoji">${s.emoji}</span>
+   <div class="series-card-header" onclick="toggleSeries(${si})" style="${s.thumb ? `background-image:url(thumbs/${s.thumb});background-size:cover;background-position:center;` : ''}">
+      <div style="position:absolute;inset:0;background:rgba(0,0,0,0.55);border-radius:8px 8px 0 0;"></div>
+      <span class="series-emoji" style="position:relative;z-index:1;">${s.emoji}</span>
       <div class="series-info">
         <div class="series-title" style="color:${s.color}">${s.name}</div>
         <div class="series-subtitle">${s.games.length} GAMES · CLICK TO ${isOpen?'COLLAPSE':'EXPAND'}</div>
