@@ -510,8 +510,8 @@ function renderSeriesCard(s, si, i){
     const isFav = favs.includes(g.name);
     return `<div class="series-mini-card">
       <button class="mini-fav ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
-      <div class="mini-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
-        <span class="mini-emoji">${g.emoji}</span>
+     <div class="mini-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
+        ${g.thumb ? `<img src="thumbs/${g.thumb}" alt="${g.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">` : `<span class="mini-emoji">${g.emoji}</span>`}
       </div>
       <div class="mini-info">
         <div class="mini-name">${g.name}</div>
