@@ -21,19 +21,16 @@ html,body{min-height:100vh;}
 body{font-family:'Space Mono',monospace;background:var(--bg);color:var(--text);font-size:calc(16px * var(--font-scale));}
 body.light-mode{--bg:#f0f0f5;--surface:#ffffff;--surface2:#e8e8f0;--border:rgba(0,0,0,0.08);--text:#0a0a1a;--muted:#606080;}
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9;}
-
 .ad-slot{background:rgba(255,255,255,0.02);border:1px dashed rgba(255,255,255,0.08);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:8px;}
 .ad-top{width:100%;height:90px;}
 .ad-between{width:100%;height:90px;margin:0 0 1.5rem;}
 .ad-label{font-size:0.55rem;letter-spacing:1px;color:var(--muted);opacity:0.5;margin-bottom:3px;text-align:center;}
 .ad-banner-wrap{padding:0.6rem 2rem;border-bottom:1px solid var(--border);}
-
 .page{display:flex;flex-direction:column;min-height:100vh;}
 .body-wrap{display:flex;flex:1;}
 .sidebar{width:180px;flex-shrink:0;padding:1.5rem 1rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:1rem;}
 .sidebar-ad{width:160px;height:600px;align-self:flex-start;position:sticky;top:1rem;}
 .content-area{flex:1;min-width:0;}
-
 header{padding:1.2rem 2rem 1rem;border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(0,245,196,0.04) 0%,transparent 100%);}
 .logo-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .logo{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:900;letter-spacing:6px;color:var(--neon);text-shadow:0 0 20px rgba(0,245,196,0.5),0 0 60px rgba(0,245,196,0.2);cursor:pointer;}
@@ -62,18 +59,14 @@ header{padding:1.2rem 2rem 1rem;border-bottom:1px solid var(--border);background
 .search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0.6rem 1rem 0.6rem 2.2rem;color:var(--text);font-family:'Space Mono',monospace;font-size:0.78rem;outline:none;transition:border-color 0.2s;}
 .search-wrap input:focus{border-color:var(--neon);}
 .search-wrap input::placeholder{color:var(--muted);}
-
 .cats{display:flex;gap:8px;padding:1rem 2rem;overflow-x:auto;border-bottom:1px solid var(--border);scrollbar-width:none;}
 .cats::-webkit-scrollbar{display:none;}
 .cat{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:5px 14px;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;white-space:nowrap;color:var(--muted);transition:all 0.15s;font-family:'Space Mono',monospace;}
 .cat.active,.cat:hover{border-color:var(--neon);color:var(--neon);background:rgba(0,245,196,0.07);}
 .cat.fav-tab.active,.cat.fav-tab:hover{border-color:#f0a500;color:#f0a500;background:rgba(240,165,0,0.07);}
-
 main{padding:1.5rem 2rem;}
 .section-title{font-family:'Orbitron',sans-serif;font-size:0.72rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:10px;}
 .section-title span{color:var(--neon);}
-
-/* ── HORIZONTAL SCROLL ROW ── */
 .scroll-row{display:flex;gap:12px;overflow-x:auto;margin-bottom:2rem;padding-bottom:6px;scrollbar-width:none;}
 .scroll-row::-webkit-scrollbar{display:none;}
 .scroll-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all 0.2s;flex-shrink:0;width:150px;position:relative;animation:fadeIn 0.3s ease both;}
@@ -88,19 +81,13 @@ main{padding:1.5rem 2rem;}
 .scroll-play{width:100%;background:rgba(0,245,196,0.1);border:1px solid rgba(0,245,196,0.3);border-radius:3px;padding:4px;color:var(--neon);font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:1px;cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
 .scroll-play:hover{background:rgba(0,245,196,0.2);}
 .scroll-rank{position:absolute;top:6px;left:6px;z-index:3;background:rgba(240,165,0,0.9);color:#1a0a00;font-size:0.55rem;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:1px;}
-
-/* ── POPULAR ROW ── */
 .popular-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all 0.2s;flex-shrink:0;width:150px;position:relative;animation:fadeIn 0.3s ease both;}
 .popular-card:hover{border-color:rgba(240,165,0,0.5);transform:translateY(-3px);}
 .popular-card:hover .hover-overlay{opacity:1;}
-
-/* ── HOVER OVERLAY ── */
 .hover-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;z-index:4;}
 .hover-play-btn{background:var(--neon);color:#0a0a0f;border:none;border-radius:50%;width:44px;height:44px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:900;}
-
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-bottom:1.5rem;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
 .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all 0.2s;animation:fadeIn 0.3s ease both;position:relative;}
 .card:hover{border-color:rgba(0,245,196,0.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.4),0 0 0 1px rgba(0,245,196,0.1);}
 .card:hover .hover-overlay{opacity:1;}
@@ -118,16 +105,12 @@ main{padding:1.5rem 2rem;}
 .card-desc{font-size:0.6rem;color:var(--muted);margin-bottom:5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
 .card-cat{font-size:0.6rem;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
-
-/* ── STAR RATING ── */
 .star-rating{display:flex;gap:2px;}
 .star{font-size:0.75rem;color:var(--muted);cursor:pointer;transition:color 0.1s;line-height:1;}
 .star.on{color:#f0a500;}
 .star:hover{color:#f0a500;}
-
 .play-btn{width:100%;background:rgba(0,245,196,0.1);border:1px solid rgba(0,245,196,0.3);border-radius:4px;padding:5px;color:var(--neon);font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:2px;cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
 .play-btn:hover{background:rgba(0,245,196,0.2);border-color:var(--neon);}
-
 .series-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;animation:fadeIn 0.3s ease both;grid-column:1/-1;}
 .series-card-header{display:flex;align-items:center;gap:12px;padding:18px 16px;cursor:pointer;transition:all 0.2s;user-select:none;position:relative;min-height:80px;}
 .series-card-header .series-bg{position:absolute;inset:0;z-index:0;border-radius:8px 8px 0 0;}
@@ -156,15 +139,10 @@ main{padding:1.5rem 2rem;}
 .mini-fav{position:absolute;top:5px;right:5px;z-index:5;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:3px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:#7070a0;transition:all 0.15s;}
 .mini-fav:hover{border-color:#f0a500;color:#f0a500;}
 .mini-fav.active{color:#f0a500;border-color:#f0a500;}
-
 .no-results{text-align:center;padding:3rem;color:var(--muted);font-size:0.8rem;letter-spacing:2px;grid-column:1/-1;}
 .no-results .icon{display:block;font-size:2rem;margin-bottom:1rem;}
-
-/* ── TOAST ── */
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--surface2);border:1px solid var(--neon);border-radius:6px;padding:10px 20px;font-size:0.7rem;color:var(--neon);letter-spacing:2px;opacity:0;transition:all 0.3s;z-index:999;pointer-events:none;text-align:center;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-
-/* ── ACHIEVEMENTS ── */
 .achievements-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--surface2);border:1px solid var(--neon2);border-radius:8px;padding:8px 14px;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--neon2);cursor:pointer;letter-spacing:2px;z-index:50;transition:all 0.2s;}
 .achievements-btn:hover{background:rgba(124,92,252,0.1);}
 .achievements-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;}
@@ -180,8 +158,6 @@ main{padding:1.5rem 2rem;}
 .achievement-desc{font-size:0.6rem;color:var(--muted);}
 .achievement-status{font-size:0.6rem;color:var(--muted);flex-shrink:0;}
 .achievement.unlocked .achievement-status{color:#f0a500;}
-
-/* ── SETTINGS ── */
 .settings-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;}
 .settings-overlay.open{display:flex;}
 .settings-panel{background:var(--surface2);border:1px solid rgba(0,245,196,0.2);border-radius:12px;width:100%;max-width:340px;padding:1.4rem;box-shadow:0 0 60px rgba(0,245,196,0.1);}
@@ -199,10 +175,8 @@ main{padding:1.5rem 2rem;}
 .surprise-btn{width:100%;background:rgba(124,92,252,0.1);border:1px solid rgba(124,92,252,0.3);border-radius:4px;color:var(--neon2);font-family:'Space Mono',monospace;font-size:0.72rem;padding:10px;cursor:pointer;transition:all 0.15s;letter-spacing:2px;text-transform:uppercase;}
 .surprise-btn:hover{background:rgba(124,92,252,0.2);border-color:var(--neon2);}
 select.settings-select{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'Space Mono',monospace;font-size:0.7rem;padding:7px;outline:none;cursor:pointer;}
-
 .confetti-piece{position:fixed;width:10px;height:10px;top:-10px;z-index:9999;animation:confettiFall linear forwards;}
 @keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:0;}}
-
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:100;align-items:center;justify-content:center;padding:1rem;}
 .modal-bg.open{display:flex;}
 .modal{background:var(--surface2);border:1px solid rgba(0,245,196,0.2);border-radius:10px;width:100%;max-width:920px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 0 60px rgba(0,245,196,0.1);height:88vh;}
@@ -215,9 +189,7 @@ select.settings-select{width:100%;background:var(--surface);border:1px solid var
 .ctrl-btn:hover{border-color:var(--neon);color:var(--neon);}
 .ctrl-btn.close-btn:hover{border-color:var(--neon3);color:var(--neon3);}
 .modal iframe{flex:1;border:none;background:#000;width:100%;}
-
 footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);color:var(--muted);font-size:0.62rem;letter-spacing:2px;}
-
 @media(max-width:640px){
   .sidebar{display:none;}
   header,main{padding:1rem;}
@@ -232,12 +204,10 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
 </head>
 <body>
 <div class="page">
-
   <div class="ad-banner-wrap">
     <div class="ad-label">Advertisement</div>
     <div class="ad-slot ad-top">[ TOP BANNER AD — ACTIVATE AFTER ADSENSE APPROVAL ]</div>
   </div>
-
   <header>
     <div class="logo-row">
       <div class="logo" onclick="resetToHome()">FREE<span>PLAY</span></div>
@@ -262,7 +232,6 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
       </div>
     </div>
   </header>
-
   <div class="cats">
     <div class="cat active" onclick="setCategory('all',this)">All</div>
     <div class="cat fav-tab" onclick="setCategory('favs',this)">★ Favorites</div>
@@ -272,7 +241,6 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
     <div class="cat" onclick="setCategory('idle',this)">Idle</div>
     <div class="cat" onclick="setCategory('strategy',this)">Strategy</div>
   </div>
-
   <div class="body-wrap">
     <div class="sidebar">
       <div class="ad-label">Advertisement</div>
@@ -284,12 +252,10 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
           <div class="section-title">🕐 RECENTLY PLAYED <span>►</span></div>
           <div class="scroll-row" id="recently-grid"></div>
         </div>
-
         <div id="popular-section">
           <div class="section-title">🔥 MOST POPULAR <span>►</span></div>
           <div class="scroll-row" id="popular-grid"></div>
         </div>
-
         <div class="section-title" id="section-label">ALL GAMES <span>►</span></div>
         <div class="grid" id="game-grid"></div>
         <div id="mid-ad-wrap" style="display:none;">
@@ -300,14 +266,10 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
       </main>
     </div>
   </div>
-
   <footer>FREEPLAY · ALWAYS FREE · NO SIGN UP REQUIRED · &copy; 2026</footer>
 </div>
-
 <div class="toast" id="toast"></div>
-
 <button class="achievements-btn" onclick="openAchievements()">🏆 ACHIEVEMENTS</button>
-
 <div class="achievements-overlay" id="achievements-overlay" onclick="closeAchievementsOutside(event)">
   <div class="achievements-panel">
     <div class="achievements-header">
@@ -317,7 +279,6 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
     <div id="achievements-list"></div>
   </div>
 </div>
-
 <div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOutside(event)">
   <div class="settings-panel">
     <div class="settings-header">
@@ -349,7 +310,6 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
     </div>
   </div>
 </div>
-
 <div class="modal-bg" id="modal" onclick="closeModal(event)">
   <div class="modal" id="modal-inner">
     <div class="modal-header">
@@ -364,97 +324,86 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
     <iframe id="modal-frame" src="" allowfullscreen></iframe>
   </div>
 </div>
-
 <script>
 const POPULAR_NAMES = ['There Is No Game','Drive Mad','Grindcraft','Subway Surfers','OvO','Boxel Rebound'];
 const TRENDING_NAMES = ['Krunker','Happy Wheels','Eaglercraft','Friday Night Funkin','Pandemic 2'];
-
 const GAMES = [
-  { name:"2048",               cat:"puzzle",   emoji:"🔢", stars:"★★★★★", path:"games/2048/index.html",               bg:"#1a1a2e", thumb:"2048.png",             desc:"Slide tiles to reach 2048. Simple to learn, impossible to put down." },
-  { name:"Snake",              cat:"arcade",   emoji:"🐍", stars:"★★★★☆", path:"games/snake/index.html",              bg:"#0f2a1a", thumb:"snake.png",            desc:"Guide your snake to eat and grow without hitting yourself." },
-  { name:"Retro Bowl",         cat:"action",   emoji:"🏈", stars:"★★★★★", path:"games/retro-bowl/index.html",         bg:"#2a0a0a", thumb:"retro-bowl.png",       desc:"Run your own football team in this addictive retro sports game." },
-  { name:"Wordle",             cat:"puzzle",   emoji:"🟩", stars:"★★★★★", path:"games/wordle/index.html",             bg:"#1a2a1a", thumb:"wordle.png",           desc:"Guess the 5-letter word in 6 tries. A new puzzle every day." },
-  { name:"Chess",              cat:"strategy", emoji:"♟️", stars:"★★★★★", path:"games/chess/index.html",              bg:"#0d1a0d", thumb:"chess.png",            desc:"The classic game of strategy. Play against a challenging AI." },
-  { name:"Pacman",             cat:"arcade",   emoji:"🟡", stars:"★★★★★", path:"games/pacman/index.html",             bg:"#1a1a00", thumb:"pacman.png",           desc:"Chomp pellets and dodge ghosts in this timeless arcade classic." },
-  { name:"Tiny Fishing",       cat:"idle",     emoji:"🎣", stars:"★★★★☆", path:"games/tiny-fishing/index.html",      bg:"#0a1a2a", thumb:"tiny-fishing.png",     desc:"Cast your line and reel in fish to upgrade your gear. Very relaxing." },
-  { name:"Friday Night Funkin",cat:"arcade",   emoji:"🎵", stars:"★★★★★", path:"games/fridaynightfunkin/index.html", bg:"#1a0a2a", thumb:"fridaynightfunkin.png", desc:"Hit the arrows to the beat in this wildly popular rhythm game." },
-  { name:"Osu",                cat:"arcade",   emoji:"🎯", stars:"★★★★★", path:"games/osu/index.html",               bg:"#1a0a1a", thumb:"osu.png",              desc:"Click circles to the beat. Simple concept, insane skill ceiling." },
-  { name:"HexGL",              cat:"action",   emoji:"🚀", stars:"★★★★★", path:"games/HexGL/index.html",             bg:"#0a1a2a", thumb:"hexgl.png",            desc:"Futuristic racing at breakneck speeds through neon corridors." },
-  { name:"Spelunky",           cat:"action",   emoji:"⛏️", stars:"★★★★★", path:"games/spelunky/index.html",          bg:"#2a1a00", thumb:"spelunky.png",         desc:"Explore deadly caves full of traps and treasure. Every run is different." },
-  { name:"There Is No Game",   cat:"puzzle",   emoji:"🤫", stars:"★★★★★", path:"games/there-is-no-game/index.html",  bg:"#0a0a1a", thumb:"there-is-no-game.png", desc:"A game that insists it isn't a game. Hilarious and surprisingly deep.", isNew:true },
-  { name:"Sandboxels",         cat:"idle",     emoji:"⚗️", stars:"★★★★★", path:"games/sandboxels/index.html",        bg:"#1a1a1a", thumb:"sandboxels.png",       desc:"A falling sand simulator with tons of elements to experiment with." },
-  { name:"Eaglercraft",        cat:"action",   emoji:"⛏️", stars:"★★★★★", path:"games/eaglercraft/index.html",       bg:"#1a2a0a", thumb:"eaglercraft.png",      desc:"Browser-based Minecraft. Build, survive and explore blocky worlds." },
-  { name:"Super Mario 64",     cat:"action",   emoji:"⭐", stars:"★★★★★", path:"games/sm64/index.html",              bg:"#2a0a0a", thumb:"sm64.png",             desc:"The legendary 3D platformer, now playable right in your browser." },
-  { name:"Krunker",            cat:"action",   emoji:"🔫", stars:"★★★★★", path:"games/krunker/index.html",           bg:"#1a1a0a", thumb:"krunker.png",          desc:"Fast-paced browser FPS. Jump, shoot, and dominate the leaderboard." },
-  { name:"Drive Mad",          cat:"action",   emoji:"🚗", stars:"★★★★☆", path:"games/drive-mad/index.html",         bg:"#2a1a0a", thumb:"drive-mad.png",        desc:"Navigate insane obstacle courses without flipping your vehicle.", isNew:true },
-  { name:"Grindcraft",         cat:"idle",     emoji:"⛏️", stars:"★★★★☆", path:"games/grindcraft/index.html",        bg:"#1a2a0a", thumb:"grindcraft.png",       desc:"Mine resources and craft items in this satisfying idle clicker.", isNew:true },
-  { name:"A Dark Room",        cat:"idle",     emoji:"🕯️", stars:"★★★★★", path:"games/adarkroom/index.html",         bg:"#0a0a0a", thumb:"adarkroom.png",        desc:"A mysterious text adventure that slowly reveals a bigger world." },
-  { name:"Pandemic 2",         cat:"strategy", emoji:"🦠", stars:"★★★★★", path:"games/pandemic2/index.html",         bg:"#0a1a0a", thumb:"pandemic2.png",        desc:"Evolve a deadly pathogen and wipe out humanity. Disturbingly fun." },
-  { name:"Line Rider",         cat:"arcade",   emoji:"🛷", stars:"★★★★☆", path:"games/line-rider/index.html",        bg:"#1a1a1a", thumb:"line-rider.png",       desc:"Draw tracks for your little sledder to ride. Physics madness." },
-  { name:"Hacker Typer",       cat:"arcade",   emoji:"💻", stars:"★★★★☆", path:"games/hackertype/index.html",        bg:"#0a1a0a", thumb:"hackertype.png",       desc:"Type anything and look like a Hollywood hacker. Great for trolling." },
-  { name:"Geometry Dash",      cat:"action",   emoji:"🔺", stars:"★★★★★", path:"games/geometrydash/index.html",      bg:"#2a0a1a", thumb:"geometrydash.png",     desc:"Jump and fly through razor-sharp obstacles to the beat of the music." },
-  { name:"Happy Wheels",       cat:"action",   emoji:"🩸", stars:"★★★★★", path:"games/happy-wheels/index.html",      bg:"#2a0a0a", thumb:"happy-wheels.png",     desc:"Ragdoll physics mayhem. Choose a character and survive the chaos." },
-  { name:"Age of War",         cat:"strategy", emoji:"⚔️", stars:"★★★★★", path:"games/age-of-war/index.html",        bg:"#2a1a00", thumb:"age-of-war.png",       desc:"Evolve your civilization through the ages and crush your enemies." },
-  { name:"BTD4",               cat:"strategy", emoji:"🎈", stars:"★★★★★", path:"games/btd4/index.html",              bg:"#1a2a0a", thumb:"btd4.png",             desc:"Pop bloons with towers before they reach the end. Tower defense at its best." },
-  { name:"Learn To Fly",       cat:"action",   emoji:"🐧", stars:"★★★★☆", path:"games/learntofly/index.html",        bg:"#0a1a2a", thumb:"learntofly.png",       desc:"A determined penguin learns to fly. Upgrade and launch further each time." },
-  { name:"Doodle Jump",        cat:"arcade",   emoji:"👾", stars:"★★★★☆", path:"games/doodle-jump/index.html",       bg:"#1a2a1a", thumb:"doodle-jump.png",      desc:"Bounce higher and higher on platforms without falling. Endlessly fun." },
-  { name:"Subway Surfers",     cat:"action",   emoji:"🏄", stars:"★★★★★", path:"games/subway-surfers/index.html",    bg:"#2a0a2a", thumb:"subway-surfers.png",   desc:"Sprint through the subway, dodge trains and collect coins.", isNew:true },
-  { name:"Among Us",           cat:"strategy", emoji:"🔴", stars:"★★★★★", path:"games/among-us/index.html",          bg:"#1a0a2a", thumb:"among-us.png",         desc:"Find the impostor among your crewmates before it's too late." },
-  { name:"OvO",                cat:"action",   emoji:"🏃", stars:"★★★★★", path:"games/ovo/index.html",               bg:"#1a1a1a", thumb:"ovo.png",              desc:"Precision platformer with slick movement mechanics. Very satisfying.", isNew:true },
-  { name:"Boxel Rebound",      cat:"action",   emoji:"📦", stars:"★★★★☆", path:"games/boxel-rebound/index.html",    bg:"#0a1a2a", thumb:"boxel-rebound.png",    desc:"Bounce through tricky levels in this tight and responsive platformer.", isNew:true },
-  { name:"Tube Jumpers",       cat:"arcade",   emoji:"🎮", stars:"★★★★☆", path:"games/tube-jumpers/index.html",     bg:"#2a0a1a", thumb:"tube-jumpers.png",     desc:"Jump between tubes and knock opponents off. Chaotic multiplayer fun." },
-  { name:"Crossy Road",       cat:"arcade",   emoji:"🐔", stars:"★★★★☆", path:"games/crossyroad/index.html",        bg:"#1a2a0a", desc:"Hop across roads and rivers without getting squashed. Endless fun." },
-  { name:"Idle Breakout",     cat:"idle",     emoji:"🧱", stars:"★★★★☆", path:"games/idle-breakout/index.html",     bg:"#0a1a2a", desc:"Brick breaking meets idle clicker. Upgrade your balls and destroy everything." },
-  { name:"Bloxors",           cat:"puzzle",   emoji:"📦", stars:"★★★★☆", path:"games/bloxors/index.html",           bg:"#1a1a2a", desc:"Roll a block to the hole without falling off. Deceptively tricky." },
-  { name:"Firewater",         cat:"puzzle",   emoji:"🔥", stars:"★★★★☆", path:"games/firewater/index.html",         bg:"#2a0a0a", desc:"Guide fire and water to their goals in this clever elemental puzzler." },
-  { name:"Paper.io 2",        cat:"action",   emoji:"📄", stars:"★★★★☆", path:"games/paperio2/index.html",          bg:"#1a1a2a", desc:"Expand your territory by drawing loops. Don't let anyone cut your trail." },
-  { name:"Stickman",          cat:"action",   emoji:"🏃", stars:"★★★★☆", path:"games/stickman/index.html",          bg:"#1a1a1a", desc:"Classic stickman action platformer with slick moves." },
-  { name:"World's Hardest Game", cat:"action",emoji:"🟥", stars:"★★★★☆", path:"games/worlds-hardest-game/index.html",bg:"#2a0a0a", desc:"Navigate a red square through blue circles. Brutally difficult." },
-  { name:"Zombs Royale",      cat:"action",   emoji:"🧟", stars:"★★★★☆", path:"games/zombs-royale/index.html",      bg:"#0a2a0a", desc:"2D battle royale. Be the last one standing." },
-  { name:"Cubefield",         cat:"action",   emoji:"🔷", stars:"★★★★☆", path:"games/cubefield/index.html",         bg:"#0a0a2a", desc:"Dodge an endless field of cubes at increasing speeds." },
-  { name:"Asteroids",         cat:"arcade",   emoji:"☄️", stars:"★★★★☆", path:"games/asteroids/index.html",         bg:"#0a0a1a", desc:"Blast asteroids in space before they destroy your ship." },
-  { name:"Breakout",          cat:"arcade",   emoji:"🧱", stars:"★★★★☆", path:"games/breakout/index.html",          bg:"#1a0a2a", desc:"Classic brick breaking action. Don't let the ball drop." },
-  { name:"Dadish",            cat:"action",   emoji:"🥸",  stars:"★★★★★", path:"games/dadish/index.html",            bg:"#1a2a1a", desc:"A radish dad searches for his kids. Charming and hilarious platformer." },
-  { name:"Trimps",            cat:"idle",     emoji:"👾", stars:"★★★★☆", path:"games/trimps/index.html",            bg:"#1a1a2a", desc:"Raise an army of Trimps and battle your way through an infinite world." },
-  { name:"Stickman Boost",    cat:"action",   emoji:"🏃", stars:"★★★★☆", path:"games/stickman-boost/index.html",   bg:"#0a1a1a", desc:"Run, jump and boost through insane obstacle courses." },
-  { name:"Q1K3",              cat:"action",   emoji:"🔫", stars:"★★★★☆", path:"games/q1k3/index.html",              bg:"#1a0a0a", desc:"A tiny but fully featured FPS built in 13kb. Incredibly impressive." },
-  { name:"Gun Mayhem",        cat:"action",   emoji:"💥", stars:"★★★★☆", path:"games/gun-mayhem/index.html",        bg:"#2a0a1a", desc:"Knock opponents off platforms with guns. Wild party game chaos." },
-  { name:"Hextris",           cat:"puzzle",   emoji:"🔶", stars:"★★★★☆", path:"games/hextris/index.html",           bg:"#1a1a0a", desc:"Tetris meets a hexagon. Match colors before the blocks stack up." },
-  { name:"Underrun",          cat:"action",   emoji:"🚀", stars:"★★★★☆", path:"games/underrun/index.html",          bg:"#0a0a2a", desc:"Survive waves of enemies in this minimalist space shooter." },
-  { name:"Just One Boss",     cat:"action",   emoji:"👹", stars:"★★★★☆", path:"games/just-one-boss/index.html",    bg:"#2a0a0a", desc:"One massive boss fight with tons of phases. Epic and intense." },
-  { name:"Core Ball",         cat:"arcade",   emoji:"⚽", stars:"★★★★☆", path:"games/core-ball/index.html",         bg:"#0a1a2a", desc:"Shoot balls into a spinning core without hitting the spikes." },
-  { name:"Pixel Cave",        cat:"action",   emoji:"⛏️", stars:"★★★★☆", path:"games/pixel-cave/index.html",        bg:"#1a1a0a", desc:"Mine through pixel caves and discover what lies beneath." },
-  { name:"Stick War",         cat:"strategy", emoji:"⚔️", stars:"★★★★★", path:"games/stickwar/index.html",          bg:"#1a1a1a", desc:"Command an army of stickmen and conquer enemy nations." },
-  { name:"Tower Master",      cat:"strategy", emoji:"🗼", stars:"★★★★☆", path:"games/towermaster/index.html",       bg:"#2a1a0a", desc:"Build the tallest tower you can without it toppling over." },
-  { name:"N-Gon",             cat:"arcade",   emoji:"🔺", stars:"★★★★☆", path:"games/n-gon/index.html",             bg:"#0a0a1a", desc:"Avoid shapes in this minimalist geometric arcade game." },
-  { name:"Polybranch",        cat:"arcade",   emoji:"🌿", stars:"★★★★☆", path:"games/polybranch/index.html",        bg:"#0a1a0a", desc:"Navigate through branching geometric shapes. Hypnotic and beautiful." },
-  { name:"Shards",            cat:"arcade",   emoji:"💎", stars:"★★★★☆", path:"games/shards/index.html",            bg:"#0a0a2a", desc:"Break crystals in this satisfying minimalist shooter." },
-  { name:"ASCII Space",       cat:"arcade",   emoji:"🚀", stars:"★★★★☆", path:"games/asciispace/index.html",        bg:"#0a0a0a", desc:"A space shooter made entirely from ASCII characters. Retro cool." },
-  { name:"Goodnight",         cat:"puzzle",   emoji:"🌙", stars:"★★★★☆", path:"games/goodnight/index.html",         bg:"#0a0a1a", desc:"A short relaxing puzzle game about putting things to sleep." },
-  { name:"Stickman Dismount",     cat:"action",  emoji:"🏃", stars:"★★★★☆", path:"games/stickman-dismount/index.html",     bg:"#1a1a1a", desc:"Ragdoll your stickman into obstacles as violently as possible." },
-{ name:"Stickman Golf",         cat:"arcade",  emoji:"⛳", stars:"★★★★☆", path:"games/stickman-golf/index.html",         bg:"#0a1a0a", desc:"Mini golf with a stickman twist. Tricky holes and fun physics." },
-{ name:"Tank Trouble 2",        cat:"action",  emoji:"🪖", stars:"★★★★☆", path:"games/tank-trouble-2/index.html",        bg:"#2a1a0a", desc:"Navigate maze-like arenas and blast other tanks. Great multiplayer." },
-{ name:"Stick Archers Battle",  cat:"action",  emoji:"🏹", stars:"★★★★☆", path:"games/stick-archers-battle/index.html",  bg:"#1a0a0a", desc:"Duel other stick archers. One shot, one kill." },
-{ name:"Ninja",                 cat:"action",  emoji:"🥷", stars:"★★★★☆", path:"games/ninja/index.html",                 bg:"#0a0a1a", desc:"Slice, dash and wall-jump through levels as a nimble ninja." },
-{ name:"Cannon Basketball 4",   cat:"arcade",  emoji:"🏀", stars:"★★★★☆", path:"games/cannon-basketball-4/index.html",   bg:"#2a1a00", desc:"Launch basketballs into hoops using cannons and physics." },
-{ name:"Basketball Legends",    cat:"action",  emoji:"🏀", stars:"★★★★★", path:"games/basketball-legends-2020/index.html",bg:"#0a1a2a", desc:"1v1 basketball with legendary players. Fast and addictive." },
-{ name:"Slope Ball",            cat:"action",  emoji:"🔵", stars:"★★★★☆", path:"games/slope-ball/index.html",            bg:"#0a0a2a", desc:"Roll a ball down an endless slope without falling off the edge." },
-{ name:"Geo Dash 2",            cat:"action",  emoji:"🔺", stars:"★★★★☆", path:"games/geodash-2/index.html",             bg:"#2a0a1a", desc:"More geometry dash levels with new obstacles and music." },
-{ name:"Run 3",                 cat:"action",  emoji:"🏃", stars:"★★★★★", path:"games/run3/index.html",                  bg:"#1a0a2a", desc:"Run through space tunnels and don't fall through the gaps." },
-{ name:"Burning Man 2",        cat:"action",  emoji:"🔥", stars:"★★★★☆", path:"games/burning-man-2/index.html",      bg:"#2a0a00", desc:"Survive waves of enemies using fire and explosions." },
-{ name:"Boxhead 2Play",        cat:"action",  emoji:"🧟", stars:"★★★★☆", path:"games/boxhead2play/index.html",       bg:"#1a0a0a", desc:"Defend against zombie hordes with an arsenal of weapons." },
-{ name:"Creative Kill Chamber",cat:"action",  emoji:"💀", stars:"★★★★☆", path:"games/creativekillchamber/index.html",bg:"#0a0a0a", desc:"Escape deadly rooms using creative and brutal methods." },
-{ name:"Meat Boy",             cat:"action",  emoji:"🩸", stars:"★★★★★", path:"games/meat-boy/index.html",           bg:"#2a0a0a", desc:"The original super meat boy. Brutal precision platforming." },
-{ name:"Short Life 2",         cat:"action",  emoji:"💥", stars:"★★★★☆", path:"games/short-life-2/index.html",       bg:"#1a1a0a", desc:"Guide a ragdoll through deadly obstacle courses without losing limbs." },
-{ name:"Cut The Rope",         cat:"puzzle",  emoji:"🍬", stars:"★★★★★", path:"games/cuttherope/index.html",         bg:"#1a0a2a", desc:"Cut ropes to feed candy to the little monster. Physics puzzler." },
-{ name:"Portal Flash",         cat:"puzzle",  emoji:"🌀", stars:"★★★★★", path:"games/portalflash/index.html",        bg:"#0a1a2a", desc:"The original flash Portal game. Place portals to solve mind-bending puzzles." },
-{ name:"Cut The Rope 2",       cat:"puzzle",  emoji:"🍬", stars:"★★★★★", path:"games/cuttherope2/index.html",              bg:"#1a0a2a", desc:"More rope cutting candy feeding fun with new characters and mechanics." },
-{ name:"Learn To Fly 2",       cat:"action",  emoji:"🐧", stars:"★★★★★", path:"games/learntofly2/index.html",              bg:"#0a1a2a", desc:"The penguin returns with bigger rockets and more upgrades." },
-{ name:"BTTS",                 cat:"arcade",  emoji:"⚽", stars:"★★★★☆", path:"games/btts/index.html",                     bg:"#0a2a0a", desc:"Both teams to score — a fun football prediction game." },
-{ name:"Defend The Tank",      cat:"strategy",emoji:"🪖", stars:"★★★★☆", path:"games/defend-the-tank/index.html",          bg:"#1a2a0a", desc:"Protect your tank from waves of enemies using turrets and upgrades." },
-{ name:"Color Switch 2",       cat:"arcade",  emoji:"🌈", stars:"★★★★☆", path:"games/color-switch-2-challenges/index.html",bg:"#1a0a2a", desc:"Pass through obstacles only when your color matches. Tricky!" },
+  { name:"2048",                  cat:"puzzle",   emoji:"🔢", stars:"★★★★★", path:"games/2048/index.html",                      bg:"#1a1a2e", thumb:"2048.png",              desc:"Slide tiles to reach 2048. Simple to learn, impossible to put down." },
+  { name:"Snake",                 cat:"arcade",   emoji:"🐍", stars:"★★★★☆", path:"games/snake/index.html",                     bg:"#0f2a1a", thumb:"snake.png",             desc:"Guide your snake to eat and grow without hitting yourself." },
+  { name:"Retro Bowl",            cat:"action",   emoji:"🏈", stars:"★★★★★", path:"games/retro-bowl/index.html",                bg:"#2a0a0a", thumb:"retro-bowl.png",        desc:"Run your own football team in this addictive retro sports game." },
+  { name:"Wordle",                cat:"puzzle",   emoji:"🟩", stars:"★★★★★", path:"games/wordle/index.html",                    bg:"#1a2a1a", thumb:"wordle.png",            desc:"Guess the 5-letter word in 6 tries. A new puzzle every day." },
+  { name:"Chess",                 cat:"strategy", emoji:"♟️", stars:"★★★★★", path:"games/chess/index.html",                     bg:"#0d1a0d", thumb:"chess.png",             desc:"The classic game of strategy. Play against a challenging AI." },
+  { name:"Pacman",                cat:"arcade",   emoji:"🟡", stars:"★★★★★", path:"games/pacman/index.html",                    bg:"#1a1a00", thumb:"pacman.png",            desc:"Chomp pellets and dodge ghosts in this timeless arcade classic." },
+  { name:"Tiny Fishing",          cat:"idle",     emoji:"🎣", stars:"★★★★☆", path:"games/tiny-fishing/index.html",              bg:"#0a1a2a", thumb:"tiny-fishing.png",      desc:"Cast your line and reel in fish to upgrade your gear. Very relaxing." },
+  { name:"Friday Night Funkin",   cat:"arcade",   emoji:"🎵", stars:"★★★★★", path:"games/fridaynightfunkin/index.html",         bg:"#1a0a2a", thumb:"fridaynightfunkin.png", desc:"Hit the arrows to the beat in this wildly popular rhythm game." },
+  { name:"Osu",                   cat:"arcade",   emoji:"🎯", stars:"★★★★★", path:"games/osu/index.html",                       bg:"#1a0a1a", thumb:"osu.png",               desc:"Click circles to the beat. Simple concept, insane skill ceiling." },
+  { name:"HexGL",                 cat:"action",   emoji:"🚀", stars:"★★★★★", path:"games/HexGL/index.html",                    bg:"#0a1a2a", thumb:"hexgl.png",             desc:"Futuristic racing at breakneck speeds through neon corridors." },
+  { name:"Spelunky",              cat:"action",   emoji:"⛏️", stars:"★★★★★", path:"games/spelunky/index.html",                  bg:"#2a1a00", thumb:"spelunky.png",          desc:"Explore deadly caves full of traps and treasure. Every run is different." },
+  { name:"There Is No Game",      cat:"puzzle",   emoji:"🤫", stars:"★★★★★", path:"games/there-is-no-game/index.html",          bg:"#0a0a1a", thumb:"there-is-no-game.png",  desc:"A game that insists it isn't a game. Hilarious and surprisingly deep.", isNew:true },
+  { name:"Sandboxels",            cat:"idle",     emoji:"⚗️", stars:"★★★★★", path:"games/sandboxels/index.html",                bg:"#1a1a1a", thumb:"sandboxels.png",        desc:"A falling sand simulator with tons of elements to experiment with." },
+  { name:"Eaglercraft",           cat:"action",   emoji:"⛏️", stars:"★★★★★", path:"games/eaglercraft/index.html",               bg:"#1a2a0a", thumb:"eaglercraft.png",       desc:"Browser-based Minecraft. Build, survive and explore blocky worlds." },
+  { name:"Super Mario 64",        cat:"action",   emoji:"⭐", stars:"★★★★★", path:"games/sm64/index.html",                      bg:"#2a0a0a", thumb:"sm64.png",              desc:"The legendary 3D platformer, now playable right in your browser." },
+  { name:"Krunker",               cat:"action",   emoji:"🔫", stars:"★★★★★", path:"games/krunker/index.html",                   bg:"#1a1a0a", thumb:"krunker.png",           desc:"Fast-paced browser FPS. Jump, shoot, and dominate the leaderboard." },
+  { name:"Drive Mad",             cat:"action",   emoji:"🚗", stars:"★★★★☆", path:"games/drive-mad/index.html",                 bg:"#2a1a0a", thumb:"drive-mad.png",         desc:"Navigate insane obstacle courses without flipping your vehicle.", isNew:true },
+  { name:"Grindcraft",            cat:"idle",     emoji:"⛏️", stars:"★★★★☆", path:"games/grindcraft/index.html",                bg:"#1a2a0a", thumb:"grindcraft.png",        desc:"Mine resources and craft items in this satisfying idle clicker.", isNew:true },
+  { name:"A Dark Room",           cat:"idle",     emoji:"🕯️", stars:"★★★★★", path:"games/adarkroom/index.html",                 bg:"#0a0a0a", thumb:"adarkroom.png",         desc:"A mysterious text adventure that slowly reveals a bigger world." },
+  { name:"Pandemic 2",            cat:"strategy", emoji:"🦠", stars:"★★★★★", path:"games/pandemic2/index.html",                 bg:"#0a1a0a", thumb:"pandemic2.png",         desc:"Evolve a deadly pathogen and wipe out humanity. Disturbingly fun." },
+  { name:"Line Rider",            cat:"arcade",   emoji:"🛷", stars:"★★★★☆", path:"games/line-rider/index.html",                bg:"#1a1a1a", thumb:"line-rider.png",        desc:"Draw tracks for your little sledder to ride. Physics madness." },
+  { name:"Hacker Typer",          cat:"arcade",   emoji:"💻", stars:"★★★★☆", path:"games/hackertype/index.html",                bg:"#0a1a0a", thumb:"hackertype.png",        desc:"Type anything and look like a Hollywood hacker. Great for trolling." },
+  { name:"Geometry Dash",         cat:"action",   emoji:"🔺", stars:"★★★★★", path:"games/geometrydash/index.html",              bg:"#2a0a1a", thumb:"geometrydash.png",      desc:"Jump and fly through razor-sharp obstacles to the beat of the music." },
+  { name:"Happy Wheels",          cat:"action",   emoji:"🩸", stars:"★★★★★", path:"games/happy-wheels/index.html",              bg:"#2a0a0a", thumb:"happy-wheels.png",      desc:"Ragdoll physics mayhem. Choose a character and survive the chaos." },
+  { name:"Age of War",            cat:"strategy", emoji:"⚔️", stars:"★★★★★", path:"games/age-of-war/index.html",                bg:"#2a1a00", thumb:"age-of-war.png",        desc:"Evolve your civilization through the ages and crush your enemies." },
+  { name:"BTD4",                  cat:"strategy", emoji:"🎈", stars:"★★★★★", path:"games/btd4/index.html",                      bg:"#1a2a0a", thumb:"btd4.png",              desc:"Pop bloons with towers before they reach the end. Tower defense at its best." },
+  { name:"Learn To Fly",          cat:"action",   emoji:"🐧", stars:"★★★★☆", path:"games/learntofly/index.html",                bg:"#0a1a2a", thumb:"learntofly.png",        desc:"A determined penguin learns to fly. Upgrade and launch further each time." },
+  { name:"Doodle Jump",           cat:"arcade",   emoji:"👾", stars:"★★★★☆", path:"games/doodle-jump/index.html",               bg:"#1a2a1a", thumb:"doodle-jump.png",       desc:"Bounce higher and higher on platforms without falling. Endlessly fun." },
+  { name:"Subway Surfers",        cat:"action",   emoji:"🏄", stars:"★★★★★", path:"games/subway-surfers/index.html",            bg:"#2a0a2a", thumb:"subway-surfers.png",    desc:"Sprint through the subway, dodge trains and collect coins.", isNew:true },
+  { name:"Among Us",              cat:"strategy", emoji:"🔴", stars:"★★★★★", path:"games/among-us/index.html",                  bg:"#1a0a2a", thumb:"among-us.png",          desc:"Find the impostor among your crewmates before it's too late." },
+  { name:"OvO",                   cat:"action",   emoji:"🏃", stars:"★★★★★", path:"games/ovo/index.html",                       bg:"#1a1a1a", thumb:"ovo.png",               desc:"Precision platformer with slick movement mechanics. Very satisfying.", isNew:true },
+  { name:"Boxel Rebound",         cat:"action",   emoji:"📦", stars:"★★★★☆", path:"games/boxel-rebound/index.html",             bg:"#0a1a2a", thumb:"boxel-rebound.png",     desc:"Bounce through tricky levels in this tight and responsive platformer.", isNew:true },
+  { name:"Tube Jumpers",          cat:"arcade",   emoji:"🎮", stars:"★★★★☆", path:"games/tube-jumpers/index.html",              bg:"#2a0a1a", thumb:"tube-jumpers.png",      desc:"Jump between tubes and knock opponents off. Chaotic multiplayer fun." },
+  { name:"Crossy Road",           cat:"arcade",   emoji:"🐔", stars:"★★★★☆", path:"games/crossyroad/index.html",               bg:"#1a2a0a", thumb:"crossyroad.png",        desc:"Hop across roads and rivers without getting squashed. Endless fun." },
+  { name:"Idle Breakout",         cat:"idle",     emoji:"🧱", stars:"★★★★☆", path:"games/idle-breakout/index.html",            bg:"#0a1a2a", thumb:"idle-breakout.png",      desc:"Brick breaking meets idle clicker. Upgrade your balls and destroy everything." },
+  { name:"Bloxors",               cat:"puzzle",   emoji:"📦", stars:"★★★★☆", path:"games/bloxors/index.html",                  bg:"#1a1a2a", thumb:"bloxors.png",           desc:"Roll a block to the hole without falling off. Deceptively tricky." },
+  { name:"Firewater",             cat:"puzzle",   emoji:"🔥", stars:"★★★★☆", path:"games/firewater/index.html",                bg:"#2a0a0a", thumb:"firewater.png",         desc:"Guide fire and water to their goals in this clever elemental puzzler." },
+  { name:"Paper.io 2",            cat:"action",   emoji:"📄", stars:"★★★★☆", path:"games/paperio2/index.html",                 bg:"#1a1a2a", thumb:"paperio2.png",          desc:"Expand your territory by drawing loops. Don't let anyone cut your trail." },
+  { name:"Stickman",              cat:"action",   emoji:"🏃", stars:"★★★★☆", path:"games/stickman/index.html",                 bg:"#1a1a1a", thumb:"stickman.png",          desc:"Classic stickman action platformer with slick moves." },
+  { name:"Cubefield",             cat:"action",   emoji:"🔷", stars:"★★★★☆", path:"games/cubefield/index.html",                bg:"#0a0a2a", thumb:"cubefield.png",         desc:"Dodge an endless field of cubes at increasing speeds." },
+  { name:"Asteroids",             cat:"arcade",   emoji:"☄️", stars:"★★★★☆", path:"games/asteroids/index.html",                bg:"#0a0a1a", thumb:"asteroids.png",         desc:"Blast asteroids in space before they destroy your ship." },
+  { name:"Breakout",              cat:"arcade",   emoji:"🧱", stars:"★★★★☆", path:"games/breakout/index.html",                 bg:"#1a0a2a", thumb:"breakout.png",          desc:"Classic brick breaking action. Don't let the ball drop." },
+  { name:"Trimps",                cat:"idle",     emoji:"👾", stars:"★★★★☆", path:"games/trimps/index.html",                   bg:"#1a1a2a", thumb:"trimps.png",            desc:"Raise an army of Trimps and battle your way through an infinite world." },
+  { name:"Stickman Boost",        cat:"action",   emoji:"🏃", stars:"★★★★☆", path:"games/stickman-boost/index.html",           bg:"#0a1a1a", thumb:"stickman-boost.png",    desc:"Run, jump and boost through insane obstacle courses." },
+  { name:"Q1K3",                  cat:"action",   emoji:"🔫", stars:"★★★★☆", path:"games/q1k3/index.html",                     bg:"#1a0a0a", thumb:"q1k3.png",              desc:"A tiny but fully featured FPS built in 13kb. Incredibly impressive." },
+  { name:"Gun Mayhem",            cat:"action",   emoji:"💥", stars:"★★★★☆", path:"games/gun-mayhem/index.html",               bg:"#2a0a1a", thumb:"gun-mayhem.png",        desc:"Knock opponents off platforms with guns. Wild party game chaos." },
+  { name:"Hextris",               cat:"puzzle",   emoji:"🔶", stars:"★★★★☆", path:"games/hextris/index.html",                  bg:"#1a1a0a", thumb:"hextris.png",           desc:"Tetris meets a hexagon. Match colors before the blocks stack up." },
+  { name:"Underrun",              cat:"action",   emoji:"🚀", stars:"★★★★☆", path:"games/underrun/index.html",                 bg:"#0a0a2a", thumb:"underrun.png",          desc:"Survive waves of enemies in this minimalist space shooter." },
+  { name:"Just One Boss",         cat:"action",   emoji:"👹", stars:"★★★★☆", path:"games/just-one-boss/index.html",            bg:"#2a0a0a", thumb:"just-one-boss.png",     desc:"One massive boss fight with tons of phases. Epic and intense." },
+  { name:"Core Ball",             cat:"arcade",   emoji:"⚽", stars:"★★★★☆", path:"games/core-ball/index.html",                bg:"#0a1a2a", thumb:"core-ball.png",         desc:"Shoot balls into a spinning core without hitting the spikes." },
+  { name:"Pixel Cave",            cat:"action",   emoji:"⛏️", stars:"★★★★☆", path:"games/pixel-cave/index.html",               bg:"#1a1a0a", thumb:"pixel-cave.png",        desc:"Mine through pixel caves and discover what lies beneath." },
+  { name:"Stick War",             cat:"strategy", emoji:"⚔️", stars:"★★★★★", path:"games/stickwar/index.html",                 bg:"#1a1a1a", thumb:"stickwar.png",          desc:"Command an army of stickmen and conquer enemy nations." },
+  { name:"Tower Master",          cat:"strategy", emoji:"🗼", stars:"★★★★☆", path:"games/towermaster/index.html",              bg:"#2a1a0a", thumb:"towermaster.png",       desc:"Build the tallest tower you can without it toppling over." },
+  { name:"N-Gon",                 cat:"arcade",   emoji:"🔺", stars:"★★★★☆", path:"games/n-gon/index.html",                    bg:"#0a0a1a", thumb:"n-gon.png",             desc:"Avoid shapes in this minimalist geometric arcade game." },
+  { name:"Polybranch",            cat:"arcade",   emoji:"🌿", stars:"★★★★☆", path:"games/polybranch/index.html",               bg:"#0a1a0a", thumb:"polybranch.png",        desc:"Navigate through branching geometric shapes. Hypnotic and beautiful." },
+  { name:"Shards",                cat:"arcade",   emoji:"💎", stars:"★★★★☆", path:"games/shards/index.html",                   bg:"#0a0a2a", thumb:"shards.png",            desc:"Break crystals in this satisfying minimalist shooter." },
+  { name:"ASCII Space",           cat:"arcade",   emoji:"🚀", stars:"★★★★☆", path:"games/asciispace/index.html",               bg:"#0a0a0a", thumb:"asciispace.png",        desc:"A space shooter made entirely from ASCII characters. Retro cool." },
+  { name:"Goodnight",             cat:"puzzle",   emoji:"🌙", stars:"★★★★☆", path:"games/goodnight/index.html",                bg:"#0a0a1a", thumb:"goodnight.png",         desc:"A short relaxing puzzle game about putting things to sleep." },
+  { name:"Stickman Dismount",     cat:"action",   emoji:"🏃", stars:"★★★★☆", path:"games/stickman-dismount/index.html",        bg:"#1a1a1a", thumb:"stickman-dismount.png", desc:"Ragdoll your stickman into obstacles as violently as possible." },
+  { name:"Stickman Golf",         cat:"arcade",   emoji:"⛳", stars:"★★★★☆", path:"games/stickman-golf/index.html",            bg:"#0a1a0a", thumb:"stickman-golf.png",     desc:"Mini golf with a stickman twist. Tricky holes and fun physics." },
+  { name:"Tank Trouble 2",        cat:"action",   emoji:"🪖", stars:"★★★★☆", path:"games/tank-trouble-2/index.html",           bg:"#2a1a0a", thumb:"tank-trouble-2.png",    desc:"Navigate maze-like arenas and blast other tanks. Great multiplayer." },
+  { name:"Stick Archers Battle",  cat:"action",   emoji:"🏹", stars:"★★★★☆", path:"games/stick-archers-battle/index.html",    bg:"#1a0a0a", thumb:"stick-archers.png",     desc:"Duel other stick archers. One shot, one kill." },
+  { name:"Cannon Basketball 4",   cat:"arcade",   emoji:"🏀", stars:"★★★★☆", path:"games/cannon-basketball-4/index.html",     bg:"#2a1a00", thumb:"cannon-basketball.png",  desc:"Launch basketballs into hoops using cannons and physics." },
+  { name:"Basketball Legends",    cat:"action",   emoji:"🏀", stars:"★★★★★", path:"games/basketball-legends-2020/index.html", bg:"#0a1a2a", thumb:"basketball-legends.png", desc:"1v1 basketball with legendary players. Fast and addictive." },
+  { name:"Slope Ball",            cat:"action",   emoji:"🔵", stars:"★★★★☆", path:"games/slope-ball/index.html",               bg:"#0a0a2a", thumb:"slope-ball.png",        desc:"Roll a ball down an endless slope without falling off the edge." },
+  { name:"Geo Dash 2",            cat:"action",   emoji:"🔺", stars:"★★★★☆", path:"games/geodash-2/index.html",                bg:"#2a0a1a", thumb:"geodash2.png",          desc:"More geometry dash levels with new obstacles and music." },
+  { name:"Burning Man 2",         cat:"action",   emoji:"🔥", stars:"★★★★☆", path:"games/burning-man-2/index.html",            bg:"#2a0a00", thumb:"burning-man-2.png",     desc:"Survive waves of enemies using fire and explosions." },
+  { name:"Boxhead 2Play",         cat:"action",   emoji:"🧟", stars:"★★★★☆", path:"games/boxhead2play/index.html",             bg:"#1a0a0a", thumb:"boxhead.png",           desc:"Defend against zombie hordes with an arsenal of weapons." },
+  { name:"Creative Kill Chamber", cat:"action",   emoji:"💀", stars:"★★★★☆", path:"games/creativekillchamber/index.html",      bg:"#0a0a0a", thumb:"creativekill.png",      desc:"Escape deadly rooms using creative and brutal methods." },
+  { name:"Short Life 2",          cat:"action",   emoji:"💥", stars:"★★★★☆", path:"games/short-life-2/index.html",             bg:"#1a1a0a", thumb:"short-life-2.png",      desc:"Guide a ragdoll through deadly obstacle courses without losing limbs." },
+  { name:"Portal Flash",          cat:"puzzle",   emoji:"🌀", stars:"★★★★★", path:"games/portalflash/index.html",              bg:"#0a1a2a", thumb:"portalflash.png",       desc:"The original flash Portal game. Place portals to solve mind-bending puzzles." },
+  { name:"Learn To Fly 2",        cat:"action",   emoji:"🐧", stars:"★★★★★", path:"games/learntofly2/index.html",              bg:"#0a1a2a", thumb:"learntofly2.png",       desc:"The penguin returns with bigger rockets and more upgrades." },
+  { name:"BTTS",                  cat:"arcade",   emoji:"⚽", stars:"★★★★☆", path:"games/btts/index.html",                     bg:"#0a2a0a", thumb:"btts.png",              desc:"Both teams to score — a fun football prediction game." },
+  { name:"Defend The Tank",       cat:"strategy", emoji:"🪖", stars:"★★★★☆", path:"games/defend-the-tank/index.html",          bg:"#1a2a0a", thumb:"defend-tank.png",       desc:"Protect your tank from waves of enemies using turrets and upgrades." },
+  { name:"Color Switch 2",        cat:"arcade",   emoji:"🌈", stars:"★★★★☆", path:"games/color-switch-2-challenges/index.html",bg:"#1a0a2a", thumb:"color-switch.png",      desc:"Pass through obstacles only when your color matches. Tricky!" },
 ];
-
 const SERIES = [
   {
     name:"Vex Series", emoji:"🏃", color:"#7c5cfc", bg:"#0a0a2a",
@@ -493,78 +442,66 @@ const SERIES = [
     ]
   },
 ];
-
 const ALL_SERIES_GAMES = SERIES.flatMap(s => s.games.map(g => ({...g, seriesName: s.name})));
 const ALL_GAMES = [...GAMES, ...ALL_SERIES_GAMES];
-
 const ACHIEVEMENTS_DEF = [
-  { id:'first_game',  icon:'🎮', name:'First Game',   desc:'Play your first game',              check: s => s.gamesPlayed >= 1 },
-  { id:'on_fire',     icon:'🔥', name:'On Fire',       desc:'Play 5 games in one session',       check: s => s.gamesPlayed >= 5 },
-  { id:'critic',      icon:'⭐', name:'Critic',         desc:'Rate 3 games',                      check: s => s.gamesRated >= 3 },
-  { id:'dedicated',   icon:'🕐', name:'Dedicated',     desc:'Spend 30 minutes on the site',      check: s => s.minutesPlayed >= 30 },
-  { id:'collector',   icon:'❤️', name:'Collector',     desc:'Favorite 5 games',                  check: s => s.gamesFaved >= 5 },
-  { id:'explorer',    icon:'🗺️', name:'Explorer',      desc:'Play 10 different games',           check: s => s.uniqueGames >= 10 },
-  { id:'marathoner',  icon:'🏃', name:'Marathoner',    desc:'Play for 1 hour total',             check: s => s.minutesPlayed >= 60 },
+  { id:'first_game',  icon:'🎮', name:'First Game',   desc:'Play your first game',         check: s => s.gamesPlayed >= 1 },
+  { id:'on_fire',     icon:'🔥', name:'On Fire',       desc:'Play 5 games in one session',  check: s => s.gamesPlayed >= 5 },
+  { id:'critic',      icon:'⭐', name:'Critic',         desc:'Rate 3 games',                 check: s => s.gamesRated >= 3 },
+  { id:'dedicated',   icon:'🕐', name:'Dedicated',     desc:'Spend 30 minutes on the site', check: s => s.minutesPlayed >= 30 },
+  { id:'collector',   icon:'❤️', name:'Collector',     desc:'Favorite 5 games',             check: s => s.gamesFaved >= 5 },
+  { id:'explorer',    icon:'🗺️', name:'Explorer',      desc:'Play 10 different games',      check: s => s.uniqueGames >= 10 },
+  { id:'marathoner',  icon:'🏃', name:'Marathoner',    desc:'Play for 1 hour total',        check: s => s.minutesPlayed >= 60 },
 ];
-
-let activeCategory = 'all';
-let favs = JSON.parse(localStorage.getItem('fp_favs') || '[]');
-let ratings = JSON.parse(localStorage.getItem('fp_ratings') || '{}');
-let recentlyPlayed = JSON.parse(localStorage.getItem('fp_recent') || '[]');
-let unlockedAchievements = JSON.parse(localStorage.getItem('fp_achievements') || '[]');
-let sessionGamesPlayed = 0;
-let uniqueGamesPlayed = JSON.parse(localStorage.getItem('fp_unique') || '[]');
-let seriesOpen = {};
-let isFS = false;
-let currentGamePath = '';
-let fontLevel = 1;
-const fontLabels = ['SMALL','MEDIUM','LARGE'];
-const fontScales = [0.85, 1, 1.15];
-let trendingGames = [];
-
-// ── TIME PLAYED ──
-let secondsPlayed = parseInt(localStorage.getItem('fp_seconds') || '0');
+let activeCategory='all';
+let favs=JSON.parse(localStorage.getItem('fp_favs')||'[]');
+let ratings=JSON.parse(localStorage.getItem('fp_ratings')||'{}');
+let recentlyPlayed=JSON.parse(localStorage.getItem('fp_recent')||'[]');
+let unlockedAchievements=JSON.parse(localStorage.getItem('fp_achievements')||'[]');
+let sessionGamesPlayed=0;
+let uniqueGamesPlayed=JSON.parse(localStorage.getItem('fp_unique')||'[]');
+let seriesOpen={};
+let isFS=false;
+let currentGamePath='';
+let fontLevel=1;
+const fontLabels=['SMALL','MEDIUM','LARGE'];
+const fontScales=[0.85,1,1.15];
+let trendingGames=[];
+let secondsPlayed=parseInt(localStorage.getItem('fp_seconds')||'0');
 setInterval(()=>{
   secondsPlayed++;
-  localStorage.setItem('fp_seconds', secondsPlayed);
-  const m = Math.floor(secondsPlayed/60);
-  const s = secondsPlayed % 60;
-  document.getElementById('time-display').textContent = `${m}:${s.toString().padStart(2,'0')}`;
+  localStorage.setItem('fp_seconds',secondsPlayed);
+  const m=Math.floor(secondsPlayed/60);
+  const s=secondsPlayed%60;
+  document.getElementById('time-display').textContent=`${m}:${s.toString().padStart(2,'0')}`;
   checkAchievements();
-}, 1000);
-
-// ── ONLINE COUNTER ──
+},1000);
 function getOnlineCount(){
-  const h = new Date().getHours();
-  const base = (h>=8&&h<=15)?180:(h>=15&&h<=20)?120:40;
-  return Math.max(10, base + Math.floor(Math.random()*30)-15);
+  const h=new Date().getHours();
+  const base=(h>=8&&h<=15)?180:(h>=15&&h<=20)?120:40;
+  return Math.max(10,base+Math.floor(Math.random()*30)-15);
 }
-document.getElementById('online-count').textContent = getOnlineCount();
-setInterval(()=>{ document.getElementById('online-count').textContent = getOnlineCount(); }, 8000);
-
-// ── TRENDING (rotates every 5 mins) ──
+document.getElementById('online-count').textContent=getOnlineCount();
+setInterval(()=>{document.getElementById('online-count').textContent=getOnlineCount();},8000);
 function pickTrending(){
-  const shuffled = [...TRENDING_NAMES].sort(()=>Math.random()-0.5);
-  trendingGames = shuffled.slice(0,3);
+  const shuffled=[...TRENDING_NAMES].sort(()=>Math.random()-0.5);
+  trendingGames=shuffled.slice(0,3);
 }
 pickTrending();
-setInterval(pickTrending, 300000);
-
-// ── RECENTLY PLAYED ──
-function addToRecent(name, path, thumb, emoji, bg){
-  recentlyPlayed = recentlyPlayed.filter(r=>r.name!==name);
-  recentlyPlayed.unshift({name, path, thumb, emoji, bg});
-  if(recentlyPlayed.length > 6) recentlyPlayed = recentlyPlayed.slice(0,6);
-  localStorage.setItem('fp_recent', JSON.stringify(recentlyPlayed));
+setInterval(pickTrending,300000);
+function addToRecent(name,path,thumb,emoji,bg){
+  recentlyPlayed=recentlyPlayed.filter(r=>r.name!==name);
+  recentlyPlayed.unshift({name,path,thumb,emoji,bg});
+  if(recentlyPlayed.length>6)recentlyPlayed=recentlyPlayed.slice(0,6);
+  localStorage.setItem('fp_recent',JSON.stringify(recentlyPlayed));
   renderRecently();
 }
-
 function renderRecently(){
-  const section = document.getElementById('recently-section');
-  const grid = document.getElementById('recently-grid');
-  if(!recentlyPlayed.length){ section.style.display='none'; return; }
-  section.style.display = activeCategory==='all' ? 'block' : 'none';
-  grid.innerHTML = recentlyPlayed.map((g,i) => `
+  const section=document.getElementById('recently-section');
+  const grid=document.getElementById('recently-grid');
+  if(!recentlyPlayed.length){section.style.display='none';return;}
+  section.style.display=activeCategory==='all'?'block':'none';
+  grid.innerHTML=recentlyPlayed.map((g,i)=>`
     <div class="scroll-card" style="animation-delay:${i*50}ms" onclick="openGame('${g.name}','${g.path}')">
       <div class="hover-overlay"><button class="hover-play-btn">▶</button></div>
       <div class="scroll-thumb" style="background:${g.bg};">
@@ -577,12 +514,10 @@ function renderRecently(){
     </div>
   `).join('');
 }
-
-// ── POPULAR ──
 function renderPopular(){
-  const grid = document.getElementById('popular-grid');
-  const popularGames = POPULAR_NAMES.map(n=>ALL_GAMES.find(g=>g.name===n)).filter(Boolean);
-  grid.innerHTML = popularGames.map((g,i) => `
+  const grid=document.getElementById('popular-grid');
+  const popularGames=POPULAR_NAMES.map(n=>ALL_GAMES.find(g=>g.name===n)).filter(Boolean);
+  grid.innerHTML=popularGames.map((g,i)=>`
     <div class="popular-card" style="animation-delay:${i*50}ms" onclick="openGame('${g.name}','${g.path}')">
       <div class="scroll-rank">#${i+1}</div>
       <div class="hover-overlay"><button class="hover-play-btn">▶</button></div>
@@ -596,36 +531,25 @@ function renderPopular(){
     </div>
   `).join('');
 }
-
-// ── ACHIEVEMENTS ──
 function getAchievementStats(){
-  return {
-    gamesPlayed: sessionGamesPlayed,
-    gamesRated: Object.keys(ratings).length,
-    minutesPlayed: Math.floor(secondsPlayed/60),
-    gamesFaved: favs.length,
-    uniqueGames: uniqueGamesPlayed.length,
-  };
+  return{gamesPlayed:sessionGamesPlayed,gamesRated:Object.keys(ratings).length,minutesPlayed:Math.floor(secondsPlayed/60),gamesFaved:favs.length,uniqueGames:uniqueGamesPlayed.length};
 }
-
 function checkAchievements(){
-  const stats = getAchievementStats();
-  ACHIEVEMENTS_DEF.forEach(a => {
-    if(!unlockedAchievements.includes(a.id) && a.check(stats)){
+  const stats=getAchievementStats();
+  ACHIEVEMENTS_DEF.forEach(a=>{
+    if(!unlockedAchievements.includes(a.id)&&a.check(stats)){
       unlockedAchievements.push(a.id);
-      localStorage.setItem('fp_achievements', JSON.stringify(unlockedAchievements));
+      localStorage.setItem('fp_achievements',JSON.stringify(unlockedAchievements));
       showToast(`🏆 ACHIEVEMENT UNLOCKED: ${a.name.toUpperCase()}!`);
       launchConfetti();
     }
   });
 }
-
 function openAchievements(){
-  const list = document.getElementById('achievements-list');
-  const stats = getAchievementStats();
-  list.innerHTML = ACHIEVEMENTS_DEF.map(a => {
-    const unlocked = unlockedAchievements.includes(a.id);
-    return `<div class="achievement ${unlocked?'unlocked':''}">
+  const list=document.getElementById('achievements-list');
+  list.innerHTML=ACHIEVEMENTS_DEF.map(a=>{
+    const unlocked=unlockedAchievements.includes(a.id);
+    return`<div class="achievement ${unlocked?'unlocked':''}">
       <div class="achievement-icon">${a.icon}</div>
       <div class="achievement-info">
         <div class="achievement-name">${a.name}</div>
@@ -636,41 +560,35 @@ function openAchievements(){
   }).join('');
   document.getElementById('achievements-overlay').classList.add('open');
 }
-function closeAchievements(){ document.getElementById('achievements-overlay').classList.remove('open'); }
-function closeAchievementsOutside(e){ if(e.target===document.getElementById('achievements-overlay')) closeAchievements(); }
-
-// ── SETTINGS ──
-function openSettings(){ document.getElementById('settings-overlay').classList.add('open'); }
-function closeSettings(){ document.getElementById('settings-overlay').classList.remove('open'); }
-function closeSettingsOutside(e){ if(e.target===document.getElementById('settings-overlay')) closeSettings(); }
-
+function closeAchievements(){document.getElementById('achievements-overlay').classList.remove('open');}
+function closeAchievementsOutside(e){if(e.target===document.getElementById('achievements-overlay'))closeAchievements();}
+function openSettings(){document.getElementById('settings-overlay').classList.add('open');}
+function closeSettings(){document.getElementById('settings-overlay').classList.remove('open');}
+function closeSettingsOutside(e){if(e.target===document.getElementById('settings-overlay'))closeSettings();}
 function setTheme(theme){
-  document.body.classList.toggle('light-mode', theme==='light');
-  document.getElementById('btn-dark').classList.toggle('active', theme==='dark');
-  document.getElementById('btn-light').classList.toggle('active', theme==='light');
-  localStorage.setItem('fp_theme', theme);
+  document.body.classList.toggle('light-mode',theme==='light');
+  document.getElementById('btn-dark').classList.toggle('active',theme==='dark');
+  document.getElementById('btn-light').classList.toggle('active',theme==='light');
+  localStorage.setItem('fp_theme',theme);
 }
-
 function changeFontSize(dir){
-  fontLevel = Math.max(0, Math.min(2, fontLevel+dir));
-  document.body.style.fontSize = (16*fontScales[fontLevel])+'px';
-  document.documentElement.style.setProperty('--font-scale', fontScales[fontLevel]);
-  document.getElementById('font-label').textContent = fontLabels[fontLevel];
-  localStorage.setItem('fp_font', fontLevel);
+  fontLevel=Math.max(0,Math.min(2,fontLevel+dir));
+  document.body.style.fontSize=(16*fontScales[fontLevel])+'px';
+  document.documentElement.style.setProperty('--font-scale',fontScales[fontLevel]);
+  document.getElementById('font-label').textContent=fontLabels[fontLevel];
+  localStorage.setItem('fp_font',fontLevel);
 }
-
 function doSurprise(){
   launchConfetti();
-  const themes = ['#00f5c4','#ff4d6d','#7c5cfc','#f0a500','#00d4ff','#ff6b9d'];
-  const t = themes[Math.floor(Math.random()*themes.length)];
-  document.documentElement.style.setProperty('--neon', t);
-  localStorage.setItem('fp_neon', t);
+  const themes=['#00f5c4','#ff4d6d','#7c5cfc','#f0a500','#00d4ff','#ff6b9d'];
+  const t=themes[Math.floor(Math.random()*themes.length)];
+  document.documentElement.style.setProperty('--neon',t);
+  localStorage.setItem('fp_neon',t);
 }
-
 function launchConfetti(){
-  const colors = ['#00f5c4','#7c5cfc','#ff4d6d','#f0a500','#ffffff','#00d4ff'];
+  const colors=['#00f5c4','#7c5cfc','#ff4d6d','#f0a500','#ffffff','#00d4ff'];
   for(let i=0;i<80;i++){
-    const el = document.createElement('div');
+    const el=document.createElement('div');
     el.className='confetti-piece';
     el.style.left=Math.random()*100+'vw';
     el.style.background=colors[Math.floor(Math.random()*colors.length)];
@@ -683,88 +601,64 @@ function launchConfetti(){
     setTimeout(()=>el.remove(),4000);
   }
 }
-
 function playMysteryGame(){
-  const game = ALL_GAMES[Math.floor(Math.random()*ALL_GAMES.length)];
-  openGame('??? MYSTERY GAME ???', game.path);
+  const game=ALL_GAMES[Math.floor(Math.random()*ALL_GAMES.length)];
+  openGame('??? MYSTERY GAME ???',game.path);
 }
-
 function openAboutBlank(){
-  const w = window.open('about:blank','_blank');
+  const w=window.open('about:blank','_blank');
   w.document.write(`<!DOCTYPE html><html><head><style>*{margin:0;padding:0;overflow:hidden;}iframe{width:100vw;height:100vh;border:none;}</style></head><body><iframe src="${location.href}"></iframe></body></html>`);
   w.document.close();
 }
-
 function showToast(msg){
-  const t = document.getElementById('toast');
-  t.textContent = msg;
+  const t=document.getElementById('toast');
+  t.textContent=msg;
   t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 3000);
+  setTimeout(()=>t.classList.remove('show'),3000);
 }
-
 function copyGameLink(){
-  const url = location.origin + location.pathname + '?game=' + encodeURIComponent(currentGamePath);
+  const url=location.origin+location.pathname+'?game='+encodeURIComponent(currentGamePath);
   navigator.clipboard.writeText(url).then(()=>showToast('✓ LINK COPIED!'));
 }
-
 function resetToHome(){
   document.getElementById('search').value='';
-  setCategory('all', document.querySelector('.cat'));
+  setCategory('all',document.querySelector('.cat'));
 }
-
-// ── RATINGS ──
-function rateGame(name, stars, el){
-  ratings[name] = stars;
-  localStorage.setItem('fp_ratings', JSON.stringify(ratings));
-  const container = el.closest('.star-rating');
-  container.querySelectorAll('.star').forEach((s,i)=>{
-    s.classList.toggle('on', i < stars);
-  });
+function rateGame(name,stars,el){
+  ratings[name]=stars;
+  localStorage.setItem('fp_ratings',JSON.stringify(ratings));
+  const container=el.closest('.star-rating');
+  container.querySelectorAll('.star').forEach((s,i)=>{s.classList.toggle('on',i<stars);});
   checkAchievements();
   showToast(`★ RATED ${name.toUpperCase()} ${stars}/5`);
 }
-
 (function(){
-  const theme = localStorage.getItem('fp_theme');
-  if(theme) setTheme(theme);
-  const font = localStorage.getItem('fp_font');
-  if(font!==null){
-    fontLevel=parseInt(font);
-    document.body.style.fontSize=(16*fontScales[fontLevel])+'px';
-    document.documentElement.style.setProperty('--font-scale',fontScales[fontLevel]);
-  }
-  const neon = localStorage.getItem('fp_neon');
-  if(neon) document.documentElement.style.setProperty('--neon',neon);
+  const theme=localStorage.getItem('fp_theme');
+  if(theme)setTheme(theme);
+  const font=localStorage.getItem('fp_font');
+  if(font!==null){fontLevel=parseInt(font);document.body.style.fontSize=(16*fontScales[fontLevel])+'px';document.documentElement.style.setProperty('--font-scale',fontScales[fontLevel]);}
+  const neon=localStorage.getItem('fp_neon');
+  if(neon)document.documentElement.style.setProperty('--neon',neon);
 })();
-
-function saveFavs(){ localStorage.setItem('fp_favs',JSON.stringify(favs)); }
-
-function setCategory(cat, el){
+function saveFavs(){localStorage.setItem('fp_favs',JSON.stringify(favs));}
+function setCategory(cat,el){
   activeCategory=cat;
   document.querySelectorAll('.cat').forEach(c=>c.classList.remove('active'));
   el.classList.add('active');
   const label=document.getElementById('section-label');
-  if(cat==='favs') label.innerHTML='FAVORITES <span>★</span>';
-  else if(cat==='all') label.innerHTML='ALL GAMES <span>►</span>';
+  if(cat==='favs')label.innerHTML='FAVORITES <span>★</span>';
+  else if(cat==='all')label.innerHTML='ALL GAMES <span>►</span>';
   else label.innerHTML=cat.toUpperCase()+' <span>►</span>';
   document.getElementById('popular-section').style.display=cat==='all'?'block':'none';
   renderRecently();
   filterGames();
 }
-
 function filterGames(){
   const q=document.getElementById('search').value.toLowerCase();
   let standaloneList=[...GAMES];
   let showSeries=true;
-
-  if(activeCategory==='favs'){
-    standaloneList=ALL_GAMES.filter(g=>favs.includes(g.name));
-    showSeries=false;
-  } else if(activeCategory!=='all'){
-    standaloneList=GAMES.filter(g=>g.cat===activeCategory);
-    showSeries=false;
-  }
-
+  if(activeCategory==='favs'){standaloneList=ALL_GAMES.filter(g=>favs.includes(g.name));showSeries=false;}
+  else if(activeCategory!=='all'){standaloneList=GAMES.filter(g=>g.cat===activeCategory);showSeries=false;}
   if(q){
     standaloneList=standaloneList.filter(g=>g.name.toLowerCase().includes(q)||(g.cat&&g.cat.includes(q)));
     document.getElementById('popular-section').style.display='none';
@@ -773,44 +667,36 @@ function filterGames(){
     document.getElementById('popular-section').style.display='block';
     renderRecently();
   }
-
   let items=standaloneList.map(g=>({type:'game',data:g}));
   if(showSeries){
     let filteredSeries=q?SERIES.filter(s=>s.name.toLowerCase().includes(q)||s.games.some(g=>g.name.toLowerCase().includes(q))):SERIES;
     filteredSeries.forEach(s=>items.push({type:'series',data:s,idx:SERIES.indexOf(s)}));
   }
-
   const gameCount=items.filter(i=>i.type==='game').length+items.filter(i=>i.type==='series').reduce((a,s)=>a+s.data.games.length,0);
   document.getElementById('game-count').innerHTML=`<b>${gameCount}</b> GAME${gameCount!==1?'S':''}`;
-
   const mid=Math.ceil(items.length/2);
   renderItems(items.slice(0,mid),'game-grid');
   renderItems(items.slice(mid),'game-grid-2');
   document.getElementById('mid-ad-wrap').style.display=items.length>8?'block':'none';
-
   if(activeCategory==='favs'&&favs.length===0){
     document.getElementById('game-grid').innerHTML='<div class="no-results"><span class="icon">★</span>NO FAVORITES YET<br><br>TAP THE STAR ON ANY GAME</div>';
     document.getElementById('game-grid-2').innerHTML='';
   }
 }
-
 function renderItems(items,gridId){
   const grid=document.getElementById(gridId);
   if(!items.length){grid.innerHTML='';return;}
   grid.innerHTML=items.map((item,i)=>item.type==='series'?renderSeriesCard(item.data,item.idx,i):renderGameCard(item.data,i)).join('');
 }
-
 function renderGameCard(g,i){
   const isFav=favs.includes(g.name);
-
-const isRecent=recentlyPlayed.some(r=>r.name===g.name);
-const userRating=ratings[g.name]||0;
-const stars=[1,2,3,4,5].map(s=>`<span class="star ${userRating>=s?'on':''}" onclick="rateGame('${g.name}',${s},this)">★</span>`).join('');
-let badge='';
-if(g.isNew) badge=`<div class="new-badge">NEW</div>`;
-else if(isRecent) badge=`<div class="trending-badge" style="background:rgba(0,245,196,0.9);color:#0a0a1a;">🕐 RECENT</div>`;
-
-  return `<div class="card" style="animation-delay:${i*40}ms">
+  const isRecent=recentlyPlayed.some(r=>r.name===g.name);
+  const userRating=ratings[g.name]||0;
+  const stars=[1,2,3,4,5].map(s=>`<span class="star ${userRating>=s?'on':''}" onclick="rateGame('${g.name}',${s},this)">★</span>`).join('');
+  let badge='';
+  if(g.isNew)badge=`<div class="new-badge">NEW</div>`;
+  else if(isRecent)badge=`<div class="trending-badge" style="background:rgba(0,245,196,0.9);color:#0a0a1a;">🕐 RECENT</div>`;
+  return`<div class="card" style="animation-delay:${i*40}ms">
     ${badge}
     <button class="fav-btn ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
     <div class="card-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
@@ -828,13 +714,12 @@ else if(isRecent) badge=`<div class="trending-badge" style="background:rgba(0,24
     </div>
   </div>`;
 }
-
 function renderSeriesCard(s,si,i){
   const isOpen=seriesOpen[si]===true;
   const bgStyle=`background:${s.bg};border-left:4px solid ${s.color};`;
   const gamesHtml=s.games.map(g=>{
     const isFav=favs.includes(g.name);
-    return `<div class="series-mini-card">
+    return`<div class="series-mini-card">
       <button class="mini-fav ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
       <div class="mini-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
         <div class="hover-overlay"><button class="hover-play-btn" style="width:32px;height:32px;font-size:0.9rem;">▶</button></div>
@@ -847,8 +732,7 @@ function renderSeriesCard(s,si,i){
       </div>
     </div>`;
   }).join('');
-
-  return `<div class="series-card" style="animation-delay:${i*40}ms">
+  return`<div class="series-card" style="animation-delay:${i*40}ms">
     <div class="series-card-header" onclick="toggleSeries(${si})">
       <div class="series-bg" style="${bgStyle}"></div>
       <div class="series-overlay"></div>
@@ -862,60 +746,45 @@ function renderSeriesCard(s,si,i){
     <div class="series-games-grid ${isOpen?'':'collapsed'}">${gamesHtml}</div>
   </div>`;
 }
-
 function toggleSeries(si){seriesOpen[si]=!seriesOpen[si];filterGames();}
-
 function toggleFav(name,e){
   e.stopPropagation();
   favs=favs.includes(name)?favs.filter(f=>f!==name):[...favs,name];
-  saveFavs();
-  checkAchievements();
-  filterGames();
+  saveFavs();checkAchievements();filterGames();
 }
-
 function openGame(name,path){
   const game=ALL_GAMES.find(g=>g.path===path)||{name,path,emoji:'🎮',bg:'#1a1a2e'};
   document.getElementById('modal-title').textContent=name.toUpperCase();
   document.getElementById('modal-frame').src=path;
   document.getElementById('modal').classList.add('open');
-  currentGamePath=path;
-  isFS=false;
+  currentGamePath=path;isFS=false;
   document.getElementById('modal-inner').classList.remove('is-fullscreen');
   document.getElementById('modal').classList.remove('is-fullscreen-bg');
   document.getElementById('fs-btn').textContent='⛶ FULLSCREEN';
-
   sessionGamesPlayed++;
-  if(!uniqueGamesPlayed.includes(name)) uniqueGamesPlayed.push(name);
+  if(!uniqueGamesPlayed.includes(name))uniqueGamesPlayed.push(name);
   localStorage.setItem('fp_unique',JSON.stringify(uniqueGamesPlayed));
-  addToRecent(name, path, game.thumb||null, game.emoji||'🎮', game.bg||'#1a1a2e');
+  addToRecent(name,path,game.thumb||null,game.emoji||'🎮',game.bg||'#1a1a2e');
   checkAchievements();
 }
-
 function reloadGame(){const f=document.getElementById('modal-frame');f.src=f.src;}
-
 function toggleFullscreen(){
   isFS=!isFS;
   document.getElementById('modal-inner').classList.toggle('is-fullscreen',isFS);
   document.getElementById('modal').classList.toggle('is-fullscreen-bg',isFS);
   document.getElementById('fs-btn').textContent=isFS?'⛶ EXIT FULL':'⛶ FULLSCREEN';
 }
-
 function closeModal(e){
   if(e&&e.target!==document.getElementById('modal'))return;
   document.getElementById('modal').classList.remove('open','is-fullscreen-bg');
   document.getElementById('modal-inner').classList.remove('is-fullscreen');
-  document.getElementById('modal-frame').src='';
-  isFS=false;
+  document.getElementById('modal-frame').src='';isFS=false;
 }
-
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){closeModal(null);closeSettings();closeAchievements();}
-  if(e.key==='k'||e.key==='K') window.location.href='https://www.google.com';
+  if(e.key==='k'||e.key==='K')window.location.href='https://www.google.com';
 });
-
-renderPopular();
-renderRecently();
-filterGames();
+renderPopular();renderRecently();filterGames();
 </script>
 </body>
 </html>
