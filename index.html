@@ -41,7 +41,7 @@ header{padding:1.2rem 2rem 1rem;border-bottom:1px solid var(--border);background
 .game-count b{color:var(--neon);}
 .suggest-btn{font-size:0.65rem;color:var(--neon2);letter-spacing:2px;border:1px solid rgba(124,92,252,0.3);border-radius:4px;padding:3px 10px;text-decoration:none;transition:all 0.15s;white-space:nowrap;}
 .suggest-btn:hover{background:rgba(124,92,252,0.1);border-color:var(--neon2);}
-.header-btns{display:flex;gap:8px;margin-left:auto;align-items:center;}
+.header-btns{display:flex;gap:8px;margin-left:auto;align-items:flex-end;flex-direction:column;}
 .mystery-btn{background:rgba(124,92,252,0.1);border:1px solid rgba(124,92,252,0.3);border-radius:4px;color:var(--neon2);font-family:'Space Mono',monospace;font-size:0.68rem;padding:6px 14px;cursor:pointer;letter-spacing:2px;transition:all 0.15s;white-space:nowrap;}
 .mystery-btn:hover{background:rgba(124,92,252,0.2);border-color:var(--neon2);}
 .icon-btn{background:none;border:1px solid var(--border);border-radius:4px;color:var(--muted);font-size:0.9rem;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.15s;}
@@ -173,9 +173,9 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
       <div class="game-count" id="game-count"><b>0</b> GAMES</div>
       <a href="https://forms.gle/SL4qFe49bYBTaqoF6" target="_blank" class="suggest-btn">+ SUGGEST A GAME</a>
       <div class="header-btns">
-        <button class="mystery-btn" onclick="playMysteryGame()">🎲 RANDOM GAME</button>
+      <button class="mystery-btn" onclick="playMysteryGame()">🎲 RANDOM GAME</button>
+<button class="mystery-btn" onclick="openAboutBlank()" style="background:rgba(0,245,196,0.1);border-color:rgba(0,245,196,0.3);color:var(--neon);">🔲 OPEN ABOUT:BLANK</button>
       <button class="icon-btn" onclick="openSettings()" title="Settings">⚙️</button>
-<button class="icon-btn" onclick="openAboutBlank()" title="Panic - Open in blank page">🔲</button>
 <div style="font-size:0.55rem;color:var(--muted);letter-spacing:1px;text-align:center;margin-top:2px;">PRESS K = GOOGLE</div>
       </div>
     </div>
