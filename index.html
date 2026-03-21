@@ -18,10 +18,7 @@
 }
 html,body{min-height:100vh;}
 body{font-family:'Space Mono',monospace;background:var(--bg);color:var(--text);font-size:calc(16px * var(--font-scale));}
-body.light-mode{
-  --bg:#f0f0f5;--surface:#ffffff;--surface2:#e8e8f0;
-  --border:rgba(0,0,0,0.08);--text:#0a0a1a;--muted:#606080;
-}
+body.light-mode{--bg:#f0f0f5;--surface:#ffffff;--surface2:#e8e8f0;--border:rgba(0,0,0,0.08);--text:#0a0a1a;--muted:#606080;}
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9;}
 
 .ad-slot{background:rgba(255,255,255,0.02);border:1px dashed rgba(255,255,255,0.08);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:8px;}
@@ -37,7 +34,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .content-area{flex:1;min-width:0;}
 
 header{padding:1.2rem 2rem 1rem;border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(0,245,196,0.04) 0%,transparent 100%);}
-.logo-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.logo-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .logo{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:900;letter-spacing:6px;color:var(--neon);text-shadow:0 0 20px rgba(0,245,196,0.5),0 0 60px rgba(0,245,196,0.2);}
 .logo span{color:var(--neon2);}
 .game-count{font-size:0.65rem;color:var(--muted);letter-spacing:2px;border:1px solid var(--border);border-radius:4px;padding:3px 8px;white-space:nowrap;}
@@ -45,11 +42,10 @@ header{padding:1.2rem 2rem 1rem;border-bottom:1px solid var(--border);background
 .suggest-btn{font-size:0.65rem;color:var(--neon2);letter-spacing:2px;border:1px solid rgba(124,92,252,0.3);border-radius:4px;padding:3px 10px;text-decoration:none;transition:all 0.15s;white-space:nowrap;}
 .suggest-btn:hover{background:rgba(124,92,252,0.1);border-color:var(--neon2);}
 .header-btns{display:flex;gap:8px;margin-left:auto;align-items:center;}
-.icon-btn{background:none;border:1px solid var(--border);border-radius:4px;color:var(--muted);font-size:0.9rem;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.15s;font-family:'Space Mono',monospace;}
-.icon-btn:hover{border-color:var(--neon);color:var(--neon);}
-.icon-btn.mystery:hover{border-color:var(--neon2);color:var(--neon2);}
 .mystery-btn{background:rgba(124,92,252,0.1);border:1px solid rgba(124,92,252,0.3);border-radius:4px;color:var(--neon2);font-family:'Space Mono',monospace;font-size:0.68rem;padding:6px 14px;cursor:pointer;letter-spacing:2px;transition:all 0.15s;white-space:nowrap;}
 .mystery-btn:hover{background:rgba(124,92,252,0.2);border-color:var(--neon2);}
+.icon-btn{background:none;border:1px solid var(--border);border-radius:4px;color:var(--muted);font-size:0.9rem;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.15s;}
+.icon-btn:hover{border-color:var(--neon);color:var(--neon);}
 .tagline{font-size:0.65rem;color:var(--muted);letter-spacing:3px;margin-top:3px;text-transform:uppercase;}
 .header-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1rem;}
 .search-wrap{position:relative;flex:1;max-width:380px;}
@@ -67,13 +63,12 @@ header{padding:1.2rem 2rem 1rem;border-bottom:1px solid var(--border);background
 main{padding:1.5rem 2rem;}
 .section-title{font-family:'Orbitron',sans-serif;font-size:0.72rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:1rem;}
 .section-title span{color:var(--neon);}
-
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-bottom:1.5rem;}
 
 .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all 0.2s;animation:fadeIn 0.3s ease both;position:relative;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .card:hover{border-color:rgba(0,245,196,0.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.4),0 0 0 1px rgba(0,245,196,0.1);}
-.fav-btn{position:absolute;top:8px;right:8px;z-index:2;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:4px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all 0.15s;color:#7070a0;}
+.fav-btn{position:absolute;top:8px;right:8px;z-index:3;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:4px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all 0.15s;color:#7070a0;}
 .fav-btn:hover{background:rgba(240,165,0,0.2);border-color:#f0a500;}
 .fav-btn.active{color:#f0a500;border-color:#f0a500;background:rgba(240,165,0,0.15);}
 .card-thumb{height:140px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
@@ -89,35 +84,36 @@ main{padding:1.5rem 2rem;}
 .play-btn:hover{background:rgba(0,245,196,0.2);border-color:var(--neon);}
 
 .series-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;animation:fadeIn 0.3s ease both;grid-column:1/-1;}
-.series-card-header{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;transition:background 0.15s;user-select:none;}
-.series-card-header:hover{background:rgba(255,255,255,0.03);}
-.series-emoji{font-size:1.8rem;}
-.series-info{flex:1;}
+.series-card-header{display:flex;align-items:center;gap:12px;padding:18px 16px;cursor:pointer;transition:background 0.15s;user-select:none;position:relative;min-height:80px;}
+.series-card-header .series-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
+.series-card-header .series-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);z-index:1;}
+.series-card-header:hover .series-overlay{background:rgba(0,0,0,0.5);}
+.series-emoji{font-size:1.8rem;position:relative;z-index:2;}
+.series-info{flex:1;position:relative;z-index:2;}
 .series-title{font-family:'Orbitron',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:3px;margin-bottom:3px;}
-.series-subtitle{font-size:0.62rem;color:var(--muted);letter-spacing:1px;}
-.series-arrow{font-size:0.8rem;color:var(--muted);transition:transform 0.2s;}
+.series-subtitle{font-size:0.62rem;color:rgba(255,255,255,0.6);letter-spacing:1px;}
+.series-arrow{font-size:0.8rem;color:rgba(255,255,255,0.6);transition:transform 0.2s;position:relative;z-index:2;}
 .series-arrow.open{transform:rotate(90deg);}
 .series-games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;padding:0 14px 14px;border-top:1px solid var(--border);}
 .series-games-grid.collapsed{display:none;}
 .series-mini-card{background:var(--surface2);border:1px solid var(--border);border-radius:6px;overflow:hidden;cursor:pointer;transition:all 0.15s;position:relative;}
 .series-mini-card:hover{border-color:rgba(0,245,196,0.4);transform:translateY(-2px);}
 .mini-thumb{height:90px;display:flex;align-items:center;justify-content:center;font-size:2rem;position:relative;overflow:hidden;}
-.mini-thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0;}
 .mini-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--surface2) 0%,transparent 60%);}
+.mini-thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0;}
 .mini-emoji{position:relative;z-index:1;}
 .mini-info{padding:6px 8px 8px;}
 .mini-name{font-size:0.7rem;font-weight:700;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .mini-stars{font-size:0.58rem;color:#f0a500;}
 .mini-play{width:100%;margin-top:5px;background:rgba(0,245,196,0.1);border:1px solid rgba(0,245,196,0.3);border-radius:3px;padding:4px;color:var(--neon);font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:1px;cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
 .mini-play:hover{background:rgba(0,245,196,0.2);}
-.mini-fav{position:absolute;top:5px;right:5px;z-index:2;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:3px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:#7070a0;transition:all 0.15s;}
+.mini-fav{position:absolute;top:5px;right:5px;z-index:3;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:3px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:#7070a0;transition:all 0.15s;}
 .mini-fav:hover{border-color:#f0a500;color:#f0a500;}
 .mini-fav.active{color:#f0a500;border-color:#f0a500;}
 
 .no-results{text-align:center;padding:3rem;color:var(--muted);font-size:0.8rem;letter-spacing:2px;grid-column:1/-1;}
 .no-results .icon{display:block;font-size:2rem;margin-bottom:1rem;}
 
-/* ── SETTINGS PANEL ── */
 .settings-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;}
 .settings-overlay.open{display:flex;}
 .settings-panel{background:var(--surface2);border:1px solid rgba(0,245,196,0.2);border-radius:12px;width:100%;max-width:340px;padding:1.4rem;box-shadow:0 0 60px rgba(0,245,196,0.1);}
@@ -131,17 +127,14 @@ main{padding:1.5rem 2rem;}
 .settings-btn{flex:1;background:none;border:1px solid var(--border);border-radius:4px;color:var(--muted);font-family:'Space Mono',monospace;font-size:0.65rem;padding:7px;cursor:pointer;transition:all 0.15s;letter-spacing:1px;}
 .settings-btn:hover{border-color:var(--neon);color:var(--neon);}
 .settings-btn.active{background:rgba(0,245,196,0.1);border-color:var(--neon);color:var(--neon);}
-.settings-btn.active-light{background:rgba(0,245,196,0.1);border-color:var(--neon);color:var(--neon);}
 .font-display{flex:2;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--text);letter-spacing:1px;}
 .surprise-btn{width:100%;background:rgba(124,92,252,0.1);border:1px solid rgba(124,92,252,0.3);border-radius:4px;color:var(--neon2);font-family:'Space Mono',monospace;font-size:0.72rem;padding:10px;cursor:pointer;transition:all 0.15s;letter-spacing:2px;text-transform:uppercase;}
 .surprise-btn:hover{background:rgba(124,92,252,0.2);border-color:var(--neon2);}
 select.settings-select{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'Space Mono',monospace;font-size:0.7rem;padding:7px;outline:none;cursor:pointer;}
 
-/* ── CONFETTI ── */
 .confetti-piece{position:fixed;width:10px;height:10px;top:-10px;z-index:9999;animation:confettiFall linear forwards;}
 @keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:0;}}
 
-/* ── MODAL ── */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:100;align-items:center;justify-content:center;padding:1rem;}
 .modal-bg.open{display:flex;}
 .modal{background:var(--surface2);border:1px solid rgba(0,245,196,0.2);border-radius:10px;width:100%;max-width:920px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 0 60px rgba(0,245,196,0.1);height:88vh;}
@@ -178,9 +171,9 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
     <div class="logo-row">
       <div class="logo">FREE<span>PLAY</span></div>
       <div class="game-count" id="game-count"><b>0</b> GAMES</div>
-      <a href="YOUR_GOOGLE_FORM_URL" target="_blank" class="suggest-btn">+ SUGGEST A GAME</a>
+      <a href="https://forms.gle/SL4qFe49bYBTaqoF6" target="_blank" class="suggest-btn">+ SUGGEST A GAME</a>
       <div class="header-btns">
-      <button class="mystery-btn" onclick="playMysteryGame()">🎲 RANDOM GAME</button>
+        <button class="mystery-btn" onclick="playMysteryGame()">🎲 RANDOM GAME</button>
         <button class="icon-btn" onclick="openSettings()" title="Settings">⚙️</button>
       </div>
     </div>
@@ -224,14 +217,12 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
   <footer>FREEPLAY · ALWAYS FREE · NO SIGN UP REQUIRED · &copy; 2026</footer>
 </div>
 
-<!-- SETTINGS PANEL -->
 <div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOutside(event)">
   <div class="settings-panel">
     <div class="settings-header">
       <span class="settings-title">⚙ SETTINGS</span>
       <button class="settings-close" onclick="closeSettings()">✕ CLOSE</button>
     </div>
-
     <div class="settings-section">
       <div class="settings-label">Theme</div>
       <div class="settings-row">
@@ -239,7 +230,6 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
         <button class="settings-btn" id="btn-light" onclick="setTheme('light')">☀️ LIGHT</button>
       </div>
     </div>
-
     <div class="settings-section">
       <div class="settings-label">Font Size</div>
       <div class="settings-row">
@@ -248,14 +238,12 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
         <button class="settings-btn" onclick="changeFontSize(1)">A+</button>
       </div>
     </div>
-
     <div class="settings-section">
       <div class="settings-label">Language</div>
       <select class="settings-select">
         <option>🇺🇸 English</option>
       </select>
     </div>
-
     <div class="settings-section">
       <div class="settings-label">🎲 Surprise</div>
       <button class="surprise-btn" onclick="doSurprise()">??? CLICK ME ???</button>
@@ -263,7 +251,6 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
   </div>
 </div>
 
-<!-- GAME MODAL -->
 <div class="modal-bg" id="modal" onclick="closeModal(event)">
   <div class="modal" id="modal-inner">
     <div class="modal-header">
@@ -316,7 +303,6 @@ const GAMES = [
 ];
 
 const SERIES = [
- const SERIES = [
   {
     name:"Vex Series", emoji:"🏃", color:"#7c5cfc", bg:"#0a0a2a", thumb:"vex.png",
     games:[
@@ -327,7 +313,7 @@ const SERIES = [
       { name:"Vex 7", emoji:"🏃", stars:"★★★★★", path:"games/vex7/index.html", bg:"#0a0a2a", thumb:"vex.png" },
     ]
   },
- {
+  {
     name:"Duck Life Series", emoji:"🦆", color:"#f0a500", bg:"#1a2a0a", thumb:"ducklife.png",
     games:[
       { name:"Duck Life 1", emoji:"🦆", stars:"★★★★☆", path:"games/ducklife1/index.html", bg:"#1a2a0a", thumb:"ducklife.png" },
@@ -345,7 +331,7 @@ const SERIES = [
       { name:"Moto X3M Winter", emoji:"❄️", stars:"★★★★☆", path:"games/motox3m-winter/index.html", bg:"#0a1a2a", thumb:"motox3m.png" },
     ]
   },
- {
+  {
     name:"Bad Ice Cream Series", emoji:"🍦", color:"#00f5c4", bg:"#0a1a2a", thumb:"bad-ice-cream.png",
     games:[
       { name:"Bad Ice Cream",   emoji:"🍦", stars:"★★★★☆", path:"games/bad-ice-cream/index.html",   bg:"#0a1a2a", thumb:"bad-ice-cream.png" },
@@ -362,18 +348,16 @@ let activeCategory = 'all';
 let favs = JSON.parse(localStorage.getItem('fp_favs') || '[]');
 let seriesOpen = {};
 let isFS = false;
-let fontLevel = 1; // 0=small,1=medium,2=large
+let fontLevel = 1;
 const fontLabels = ['SMALL','MEDIUM','LARGE'];
 const fontScales = [0.85, 1, 1.15];
 
-// ── SETTINGS ──
 function openSettings(){ document.getElementById('settings-overlay').classList.add('open'); }
 function closeSettings(){ document.getElementById('settings-overlay').classList.remove('open'); }
 function closeSettingsOutside(e){ if(e.target===document.getElementById('settings-overlay')) closeSettings(); }
 
 function setTheme(theme){
-  if(theme==='light') document.body.classList.add('light-mode');
-  else document.body.classList.remove('light-mode');
+  document.body.classList.toggle('light-mode', theme==='light');
   document.getElementById('btn-dark').classList.toggle('active', theme==='dark');
   document.getElementById('btn-light').classList.toggle('active', theme==='light');
   localStorage.setItem('fp_theme', theme);
@@ -381,19 +365,15 @@ function setTheme(theme){
 
 function changeFontSize(dir){
   fontLevel = Math.max(0, Math.min(2, fontLevel + dir));
-  const scale = fontScales[fontLevel];
-  document.documentElement.style.setProperty('--font-scale', scale);
-  document.querySelectorAll('.card-name, .cat, .play-btn, .section-title, .card-cat, .mini-name').forEach(el => {
-    el.style.fontSize = '';
-  });
-  document.body.style.fontSize = (16 * scale) + 'px';
+  document.body.style.fontSize = (16 * fontScales[fontLevel]) + 'px';
+  document.documentElement.style.setProperty('--font-scale', fontScales[fontLevel]);
   document.getElementById('font-label').textContent = fontLabels[fontLevel];
   localStorage.setItem('fp_font', fontLevel);
 }
 
 function doSurprise(){
   launchConfetti();
-  const themes = ['#00f5c4','#ff4d6d','#7c5cfc','#f0a500','#00d4ff'];
+  const themes = ['#00f5c4','#ff4d6d','#7c5cfc','#f0a500','#00d4ff','#ff6b9d'];
   const t = themes[Math.floor(Math.random()*themes.length)];
   document.documentElement.style.setProperty('--neon', t);
   localStorage.setItem('fp_neon', t);
@@ -416,19 +396,20 @@ function launchConfetti(){
   }
 }
 
-// ── MYSTERY GAME ──
 function playMysteryGame(){
-  const allPlayable = ALL_GAMES.filter(g => g.path);
-  const game = allPlayable[Math.floor(Math.random()*allPlayable.length)];
+  const game = ALL_GAMES[Math.floor(Math.random()*ALL_GAMES.length)];
   openGame('??? MYSTERY GAME ???', game.path);
 }
 
-// Load saved settings
 (function(){
   const theme = localStorage.getItem('fp_theme');
   if(theme) setTheme(theme);
   const font = localStorage.getItem('fp_font');
-  if(font !== null){ fontLevel = parseInt(font); document.documentElement.style.setProperty('--font-scale', fontScales[fontLevel]); document.getElementById('font-label') && (document.getElementById('font-label').textContent = fontLabels[fontLevel]); }
+  if(font !== null){
+    fontLevel = parseInt(font);
+    document.body.style.fontSize = (16 * fontScales[fontLevel]) + 'px';
+    document.documentElement.style.setProperty('--font-scale', fontScales[fontLevel]);
+  }
   const neon = localStorage.getItem('fp_neon');
   if(neon) document.documentElement.style.setProperty('--neon', neon);
 })();
@@ -463,9 +444,8 @@ function filterGames(){
 
   let items = standaloneList.map(g => ({type:'game', data:g}));
   if(showSeries){
-    let filteredSeries = SERIES;
-    if(q) filteredSeries = SERIES.filter(s => s.name.toLowerCase().includes(q) || s.games.some(g=>g.name.toLowerCase().includes(q)));
-    filteredSeries.forEach((s,i) => items.push({type:'series', data:s, idx:SERIES.indexOf(s)}));
+    let filteredSeries = q ? SERIES.filter(s => s.name.toLowerCase().includes(q)||s.games.some(g=>g.name.toLowerCase().includes(q))) : SERIES;
+    filteredSeries.forEach(s => items.push({type:'series', data:s, idx:SERIES.indexOf(s)}));
   }
 
   const gameCount = items.filter(i=>i.type==='game').length + items.filter(i=>i.type==='series').reduce((a,s)=>a+s.data.games.length,0);
@@ -492,8 +472,8 @@ function renderGameCard(g, i){
   const isFav = favs.includes(g.name);
   return `<div class="card" style="animation-delay:${i*40}ms">
     <button class="fav-btn ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
-<div class="card-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
-      ${g.thumb ? `<img src="thumbs/${g.thumb}" alt="${g.name}" loading="lazy">` : `<span class="thumb-emoji">${g.emoji}</span>`}
+    <div class="card-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
+      ${g.thumb?`<img src="thumbs/${g.thumb}" alt="${g.name}" loading="lazy">`:`<span class="thumb-emoji">${g.emoji}</span>`}
     </div>
     <div class="card-info">
       <div class="card-name">${g.name}</div>
@@ -508,12 +488,13 @@ function renderGameCard(g, i){
 
 function renderSeriesCard(s, si, i){
   const isOpen = seriesOpen[si]===true;
+  const bgStyle = s.thumb ? `background-image:url(thumbs/${s.thumb});background-size:cover;background-position:center;` : `background:${s.bg};`;
   const gamesHtml = s.games.map(g => {
     const isFav = favs.includes(g.name);
     return `<div class="series-mini-card">
       <button class="mini-fav ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
-     <div class="mini-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
-        ${g.thumb ? `<img src="thumbs/${g.thumb}" alt="${g.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">` : `<span class="mini-emoji">${g.emoji}</span>`}
+      <div class="mini-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
+        ${g.thumb?`<img src="thumbs/${g.thumb}" alt="${g.name}" loading="lazy">`:`<span class="mini-emoji">${g.emoji}</span>`}
       </div>
       <div class="mini-info">
         <div class="mini-name">${g.name}</div>
@@ -524,9 +505,10 @@ function renderSeriesCard(s, si, i){
   }).join('');
 
   return `<div class="series-card" style="animation-delay:${i*40}ms">
-   <div class="series-card-header" onclick="toggleSeries(${si})" style="${s.thumb ? `background-image:url(thumbs/${s.thumb});background-size:cover;background-position:center;` : ''}">
-      <div style="position:absolute;inset:0;background:rgba(0,0,0,0.55);border-radius:8px 8px 0 0;"></div>
-      <span class="series-emoji" style="position:relative;z-index:1;">${s.emoji}</span>
+    <div class="series-card-header" onclick="toggleSeries(${si})">
+      <div class="series-bg" style="${bgStyle}"></div>
+      <div class="series-overlay"></div>
+      <span class="series-emoji">${s.emoji}</span>
       <div class="series-info">
         <div class="series-title" style="color:${s.color}">${s.name}</div>
         <div class="series-subtitle">${s.games.length} GAMES · CLICK TO ${isOpen?'COLLAPSE':'EXPAND'}</div>
