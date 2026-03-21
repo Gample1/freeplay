@@ -203,7 +203,8 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
     <div class="modal-header">
       <div class="modal-title" id="modal-title">GAME</div>
       <div class="modal-controls">
-        <button class="ctrl-btn" onclick="toggleFullscreen()" id="fs-btn">⛶ FULLSCREEN</button>
+    <button class="ctrl-btn" onclick="reloadGame()" id="reload-btn">↺ RELOAD</button>
+<button class="ctrl-btn" onclick="toggleFullscreen()" id="fs-btn">⛶ FULLSCREEN</button>
         <button class="ctrl-btn close-btn" onclick="closeModal(null)">✕ CLOSE</button>
       </div>
     </div>
@@ -241,7 +242,6 @@ const GAMES = [
   { name:"Run 3",         cat:"action", emoji:"🏃", stars:"★★★★★", path:"games/run-3/index.html",         bg:"#1a0a2a" },
   { name:"Snake",         cat:"arcade", emoji:"🐍", stars:"★★★★☆", path:"games/snake/index.html",         bg:"#0f2a1a" },
   { name:"Retro Bowl",    cat:"action", emoji:"🏈", stars:"★★★★★", path:"games/retro-bowl/index.html",    bg:"#2a0a0a" },
-  { name:"Cookie Clicker",cat:"idle",   emoji:"🍪", stars:"★★★★☆", path:"games/cookie-clicker/index.html",bg:"#2a1400" },
   { name:"Wordle",        cat:"puzzle", emoji:"🟩", stars:"★★★★★", path:"games/wordle/index.html",        bg:"#1a2a1a" },
   { name:"Pacman",        cat:"arcade", emoji:"🟡", stars:"★★★★★", path:"games/pacman/index.html",        bg:"#1a1a00" },
   { name:"Tiny Fishing",  cat:"idle",   emoji:"🎣", stars:"★★★★☆", path:"games/tiny-fishing/index.html", bg:"#0a1a2a" },
@@ -324,7 +324,10 @@ function openGame(name, path){
   document.getElementById('modal').classList.remove('is-fullscreen-bg');
   document.getElementById('fs-btn').textContent = '⛶ FULLSCREEN';
 }
-
+function reloadGame(){
+  const frame = document.getElementById('modal-frame');
+  frame.src = frame.src;
+}
 function toggleFullscreen(){
   isFS = !isFS;
   document.getElementById('modal-inner').classList.toggle('is-fullscreen', isFS);
