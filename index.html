@@ -174,7 +174,9 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
       <a href="https://forms.gle/SL4qFe49bYBTaqoF6" target="_blank" class="suggest-btn">+ SUGGEST A GAME</a>
       <div class="header-btns">
         <button class="mystery-btn" onclick="playMysteryGame()">🎲 RANDOM GAME</button>
-        <button class="icon-btn" onclick="openSettings()" title="Settings">⚙️</button>
+      <button class="icon-btn" onclick="openSettings()" title="Settings">⚙️</button>
+<button class="icon-btn" onclick="openAboutBlank()" title="Panic - Open in blank page">🔲</button>
+<div style="font-size:0.55rem;color:var(--muted);letter-spacing:1px;text-align:center;margin-top:2px;">PRESS K = GOOGLE</div>
       </div>
     </div>
     <div class="tagline">Unblocked · Always Free · No Sign Up</div>
@@ -554,8 +556,16 @@ function closeModal(e){
   isFS=false;
 }
 
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal(null);closeSettings();}});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeModal(null);closeSettings();}
+  if(e.key==='k'||e.key==='K') window.location.href='https://www.google.com';
+});
 filterGames();
+function openAboutBlank(){
+  const w = window.open('about:blank', '_blank');
+  w.document.write(`<!DOCTYPE html><html><head><style>*{margin:0;padding:0;overflow:hidden;}iframe{width:100vw;height:100vh;border:none;}</style></head><body><iframe src="${location.href}"></iframe></body></html>`);
+  w.document.close();
+}
 </script>
 </body>
 </html>
