@@ -5,21 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FREEPLAY — Unblocked Games</title>
 <meta name="description" content="Free unblocked games you can play anywhere. No sign up required.">
-
-<!--
-  ============================================================
-  GOOGLE ADSENSE — SETUP INSTRUCTIONS
-  ============================================================
-  1. Go to https://adsense.google.com and sign up
-  2. Add your website URL and wait for approval (a few days)
-  3. Once approved, replace YOUR-PUBLISHER-ID below with your
-     real ID (looks like: ca-pub-1234567890123456)
-  4. Replace each YOUR-AD-SLOT-ID with your real ad slot IDs
-  5. Uncomment the <script> tag below to activate ads
-  ============================================================
--->
 <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR-PUBLISHER-ID" crossorigin="anonymous"></script> -->
-
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -68,24 +54,54 @@ header{padding:1.2rem 2rem 1rem;border-bottom:1px solid var(--border);background
 main{padding:1.5rem 2rem;}
 .section-title{font-family:'Orbitron',sans-serif;font-size:0.72rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:1rem;}
 .section-title span{color:var(--neon);}
+
+/* ── GRID ── */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-bottom:1.5rem;}
 
+/* ── REGULAR CARD ── */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all 0.2s;animation:fadeIn 0.3s ease both;position:relative;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .card:hover{border-color:rgba(0,245,196,0.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.4),0 0 0 1px rgba(0,245,196,0.1);}
 .fav-btn{position:absolute;top:8px;right:8px;z-index:2;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:4px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all 0.15s;color:#7070a0;}
 .fav-btn:hover{background:rgba(240,165,0,0.2);border-color:#f0a500;}
 .fav-btn.active{color:#f0a500;border-color:#f0a500;background:rgba(240,165,0,0.15);}
-.card-thumb{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.card-thumb{height:140px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
 .card-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--surface) 0%,transparent 60%);}
-.thumb-emoji{font-size:3rem;position:relative;z-index:1;}
+.thumb-emoji{font-size:2.8rem;position:relative;z-index:1;}
 .card-info{padding:10px 12px 12px;}
-.card-name{font-size:0.82rem;font-weight:700;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.card-name{font-size:0.8rem;font-weight:700;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .card-meta{display:flex;align-items:center;justify-content:space-between;}
-.card-cat{font-size:0.62rem;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
-.card-stars{font-size:0.62rem;color:#f0a500;}
-.play-btn{width:100%;margin-top:8px;background:rgba(0,245,196,0.1);border:1px solid rgba(0,245,196,0.3);border-radius:4px;padding:6px;color:var(--neon);font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:2px;cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
+.card-cat{font-size:0.6rem;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
+.card-stars{font-size:0.6rem;color:#f0a500;}
+.play-btn{width:100%;margin-top:8px;background:rgba(0,245,196,0.1);border:1px solid rgba(0,245,196,0.3);border-radius:4px;padding:6px;color:var(--neon);font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:2px;cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
 .play-btn:hover{background:rgba(0,245,196,0.2);border-color:var(--neon);}
+
+/* ── SERIES CARD ── */
+.series-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;animation:fadeIn 0.3s ease both;grid-column:1/-1;}
+.series-card-header{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;transition:background 0.15s;user-select:none;}
+.series-card-header:hover{background:rgba(255,255,255,0.03);}
+.series-emoji{font-size:1.8rem;}
+.series-info{flex:1;}
+.series-title{font-family:'Orbitron',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:3px;margin-bottom:3px;}
+.series-subtitle{font-size:0.62rem;color:var(--muted);letter-spacing:1px;}
+.series-arrow{font-size:0.8rem;color:var(--muted);transition:transform 0.2s;}
+.series-arrow.open{transform:rotate(90deg);}
+.series-games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;padding:0 14px 14px;border-top:1px solid var(--border);}
+.series-games-grid.collapsed{display:none;}
+.series-mini-card{background:var(--surface2);border:1px solid var(--border);border-radius:6px;overflow:hidden;cursor:pointer;transition:all 0.15s;position:relative;}
+.series-mini-card:hover{border-color:rgba(0,245,196,0.4);transform:translateY(-2px);}
+.mini-thumb{height:90px;display:flex;align-items:center;justify-content:center;font-size:2rem;position:relative;}
+.mini-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--surface2) 0%,transparent 60%);}
+.mini-emoji{position:relative;z-index:1;}
+.mini-info{padding:6px 8px 8px;}
+.mini-name{font-size:0.7rem;font-weight:700;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mini-stars{font-size:0.58rem;color:#f0a500;}
+.mini-play{width:100%;margin-top:5px;background:rgba(0,245,196,0.1);border:1px solid rgba(0,245,196,0.3);border-radius:3px;padding:4px;color:var(--neon);font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:1px;cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
+.mini-play:hover{background:rgba(0,245,196,0.2);}
+.mini-fav{position:absolute;top:5px;right:5px;z-index:2;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:3px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:#7070a0;transition:all 0.15s;}
+.mini-fav:hover{border-color:#f0a500;color:#f0a500;}
+.mini-fav.active{color:#f0a500;border-color:#f0a500;}
+
 .no-results{text-align:center;padding:3rem;color:var(--muted);font-size:0.8rem;letter-spacing:2px;grid-column:1/-1;}
 .no-results .icon{display:block;font-size:2rem;margin-bottom:1rem;}
 
@@ -109,6 +125,7 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
   header,main{padding:1rem;}
   .cats,.ad-banner-wrap{padding:0.8rem 1rem;}
   .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;}
+  .series-games-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
 }
 </style>
 </head>
@@ -117,17 +134,7 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
 
   <div class="ad-banner-wrap">
     <div class="ad-label">Advertisement</div>
-    <div class="ad-slot ad-top">
-      <!--
-        PASTE ADSENSE TOP BANNER CODE HERE AFTER APPROVAL:
-        <ins class="adsbygoogle" style="display:block"
-             data-ad-client="ca-pub-YOUR-PUBLISHER-ID"
-             data-ad-slot="YOUR-AD-SLOT-ID-TOP"
-             data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      -->
-      [ TOP BANNER AD — ACTIVATE AFTER ADSENSE APPROVAL ]
-    </div>
+    <div class="ad-slot ad-top">[ TOP BANNER AD — ACTIVATE AFTER ADSENSE APPROVAL ]</div>
   </div>
 
   <header>
@@ -157,39 +164,16 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
   <div class="body-wrap">
     <div class="sidebar">
       <div class="ad-label">Advertisement</div>
-      <div class="ad-slot sidebar-ad">
-        <!--
-          PASTE ADSENSE SIDEBAR CODE HERE AFTER APPROVAL:
-          <ins class="adsbygoogle" style="display:block"
-               data-ad-client="ca-pub-YOUR-PUBLISHER-ID"
-               data-ad-slot="YOUR-AD-SLOT-ID-SIDEBAR"
-               data-ad-format="auto"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        -->
-        [ SIDEBAR AD ]
-      </div>
+      <div class="ad-slot sidebar-ad">[ SIDEBAR AD ]</div>
     </div>
-
     <div class="content-area">
       <main>
         <div class="section-title" id="section-label">ALL GAMES <span>►</span></div>
         <div class="grid" id="game-grid"></div>
-
         <div id="mid-ad-wrap" style="display:none;">
           <div class="ad-label">Advertisement</div>
-          <div class="ad-slot ad-between">
-            <!--
-              PASTE ADSENSE MID-PAGE CODE HERE AFTER APPROVAL:
-              <ins class="adsbygoogle" style="display:block"
-                   data-ad-client="ca-pub-YOUR-PUBLISHER-ID"
-                   data-ad-slot="YOUR-AD-SLOT-ID-MID"
-                   data-ad-format="auto" data-full-width-responsive="true"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            -->
-            [ MID-PAGE AD — ACTIVATE AFTER ADSENSE APPROVAL ]
-          </div>
+          <div class="ad-slot ad-between">[ MID-PAGE AD — ACTIVATE AFTER ADSENSE APPROVAL ]</div>
         </div>
-
         <div class="grid" id="game-grid-2"></div>
       </main>
     </div>
@@ -203,8 +187,8 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
     <div class="modal-header">
       <div class="modal-title" id="modal-title">GAME</div>
       <div class="modal-controls">
-    <button class="ctrl-btn" onclick="reloadGame()" id="reload-btn">↺ RELOAD</button>
-<button class="ctrl-btn" onclick="toggleFullscreen()" id="fs-btn">⛶ FULLSCREEN</button>
+        <button class="ctrl-btn" onclick="reloadGame()">↺ RELOAD</button>
+        <button class="ctrl-btn" onclick="toggleFullscreen()" id="fs-btn">⛶ FULLSCREEN</button>
         <button class="ctrl-btn close-btn" onclick="closeModal(null)">✕ CLOSE</button>
       </div>
     </div>
@@ -213,44 +197,76 @@ footer{text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);
 </div>
 
 <script>
-/*
-  ================================================================
-  HOW TO ADD GAMES
-  ================================================================
-  1. Download a free HTML5 game (from itch.io, github, etc.)
-  2. Unzip it into a folder inside ~/freeplay/games/
-     e.g. ~/freeplay/games/snake/
-  3. Find the main HTML file inside (usually index.html)
-  4. Add a line to the GAMES array below:
-     { name:"Snake", cat:"arcade", emoji:"🐍", stars:"★★★★☆", path:"games/snake/index.html", bg:"#0f2a1a" },
-
-  CATEGORIES: action, puzzle, arcade, idle, strategy
-
-  BG COLOR: any dark hex color for the card thumbnail background
-
-  WHERE TO GET FREE HTML5 GAMES:
-  - https://itch.io  (filter: HTML, free, downloadable)
-  - https://js13kgames.com  (all tiny open source JS games)
-  - https://github.com  (search: html5 game open source)
-  ================================================================
-*/
-
+// ── STANDALONE GAMES ──
 const GAMES = [
-  { name:"2048", cat:"puzzle", emoji:"🔢", stars:"★★☆☆☆", path:"games/2048/index.html", bg:"#1a1a2e" },
-  { name:"DogeMiner", cat:"idel", emoji:"🎮", stars:"★★★★☆", path:"games/DogeMiner/index.html", bg:"#459645" },
-  { name:"OfflineParadise", cat:"arcade/platformer", emoji:"🎮", stars:"★★★★★", path:"games/OfflineParadise/index.html", bg:"#cc7e78" },
-  { name:"Run 3",         cat:"action", emoji:"🏃", stars:"★★★★★", path:"games/run-3/index.html",         bg:"#1a0a2a" },
-  { name:"Snake",         cat:"arcade", emoji:"🐍", stars:"★★★★☆", path:"games/snake/index.html",         bg:"#0f2a1a" },
-  { name:"Retro Bowl",    cat:"action", emoji:"🏈", stars:"★★★★★", path:"games/retro-bowl/index.html",    bg:"#2a0a0a" },
-  { name:"Wordle",        cat:"puzzle", emoji:"🟩", stars:"★★★★★", path:"games/wordle/index.html",        bg:"#1a2a1a" },
-  { name:"Pacman",        cat:"arcade", emoji:"🟡", stars:"★★★★★", path:"games/pacman/index.html",        bg:"#1a1a00" },
-  { name:"Tiny Fishing",  cat:"idle",   emoji:"🎣", stars:"★★★★☆", path:"games/tiny-fishing/index.html", bg:"#0a1a2a" },
+  { name:"2048",         cat:"puzzle",   emoji:"🔢", stars:"★★★★★", path:"games/2048/index.html",         bg:"#1a1a2e" },
+  { name:"Snake",        cat:"arcade",   emoji:"🐍", stars:"★★★★☆", path:"games/snake/index.html",        bg:"#0f2a1a" },
+  { name:"Retro Bowl",   cat:"action",   emoji:"🏈", stars:"★★★★★", path:"games/retro-bowl/index.html",   bg:"#2a0a0a" },
+  { name:"Wordle",       cat:"puzzle",   emoji:"🟩", stars:"★★★★★", path:"games/wordle/index.html",       bg:"#1a2a1a" },
+  { name:"Chess",        cat:"strategy", emoji:"♟️", stars:"★★★★★", path:"games/chess/index.html",        bg:"#0d1a0d" },
+  { name:"Pacman",       cat:"arcade",   emoji:"🟡", stars:"★★★★★", path:"games/pacman/index.html",       bg:"#1a1a00" },
+  { name:"Tiny Fishing", cat:"idle",     emoji:"🎣", stars:"★★★★☆", path:"games/tiny-fishing/index.html", bg:"#0a1a2a" },
+  { name:"Run 3",        cat:"action",   emoji:"🏃", stars:"★★★★★", path:"games/run-3/index.html",        bg:"#1a0a2a" },
+  { name:"Minesweeper",  cat:"puzzle",   emoji:"💣", stars:"★★★★☆", path:"games/minesweeper/index.html",  bg:"#1a1a1a" },
 ];
 
+// ── SERIES ──
+const SERIES = [
+  {
+    name:"Vex Series", emoji:"🏃", color:"#7c5cfc", bg:"#0a0a2a",
+    games:[
+      { name:"Vex 3", emoji:"🏃", stars:"★★★★☆", path:"games/vex3/index.html", bg:"#0a0a2a" },
+      { name:"Vex 4", emoji:"🏃", stars:"★★★★☆", path:"games/vex4/index.html", bg:"#0a0a2a" },
+      { name:"Vex 5", emoji:"🏃", stars:"★★★★★", path:"games/vex5/index.html", bg:"#0a0a2a" },
+      { name:"Vex 6", emoji:"🏃", stars:"★★★★★", path:"games/vex6/index.html", bg:"#0a0a2a" },
+      { name:"Vex 7", emoji:"🏃", stars:"★★★★★", path:"games/vex7/index.html", bg:"#0a0a2a" },
+    ]
+  },
+  {
+    name:"Duck Life Series", emoji:"🦆", color:"#f0a500", bg:"#1a2a0a",
+    games:[
+      { name:"Duck Life 1", emoji:"🦆", stars:"★★★★☆", path:"games/ducklife1/index.html", bg:"#1a2a0a" },
+      { name:"Duck Life 2", emoji:"🦆", stars:"★★★★☆", path:"games/ducklife2/index.html", bg:"#1a2a0a" },
+      { name:"Duck Life 3", emoji:"🦆", stars:"★★★★☆", path:"games/ducklife3/index.html", bg:"#1a2a0a" },
+      { name:"Duck Life 4", emoji:"🦆", stars:"★★★★★", path:"games/ducklife4/index.html", bg:"#1a2a0a" },
+    ]
+  },
+  {
+    name:"Moto X3M Series", emoji:"🏍️", color:"#ff4d6d", bg:"#2a0a0a",
+    games:[
+      { name:"Moto X3M",        emoji:"🏍️", stars:"★★★★★", path:"games/motox3m/index.html",        bg:"#2a0a0a" },
+      { name:"Moto X3M 2",      emoji:"🏍️", stars:"★★★★★", path:"games/motox3m2/index.html",       bg:"#2a0a0a" },
+      { name:"Moto X3M Spooky", emoji:"🎃", stars:"★★★★☆", path:"games/motox3m-spooky/index.html", bg:"#1a0a00" },
+      { name:"Moto X3M Winter", emoji:"❄️", stars:"★★★★☆", path:"games/motox3m-winter/index.html", bg:"#0a1a2a" },
+    ]
+  },
+  {
+    name:"Bad Ice Cream Series", emoji:"🍦", color:"#00f5c4", bg:"#0a1a2a",
+    games:[
+      { name:"Bad Ice Cream",   emoji:"🍦", stars:"★★★★☆", path:"games/bad-ice-cream/index.html",   bg:"#0a1a2a" },
+      { name:"Bad Ice Cream 2", emoji:"🍦", stars:"★★★★☆", path:"games/bad-ice-cream-2/index.html", bg:"#0a1a2a" },
+      { name:"Bad Ice Cream 3", emoji:"🍦", stars:"★★★★★", path:"games/bad-ice-cream-3/index.html", bg:"#0a1a2a" },
+    ]
+  },
+  {
+    name:"Papa's Series", emoji:"🍕", color:"#f0a500", bg:"#2a1400",
+    games:[
+      { name:"Papa's Burgeria",  emoji:"🍔", stars:"★★★★★", path:"games/papas-burgeria/index.html",  bg:"#2a1400" },
+      { name:"Papa's Freezeria", emoji:"🍦", stars:"★★★★★", path:"games/papas-freezeria/index.html", bg:"#0a1a2a" },
+      { name:"Papa's Pizzeria",  emoji:"🍕", stars:"★★★★★", path:"games/papas-pizzeria/index.html",  bg:"#2a0a0a" },
+      { name:"Papa's Sushiria",  emoji:"🍣", stars:"★★★★☆", path:"games/papas-sushiria/index.html",  bg:"#0a1a1a" },
+    ]
+  },
+];
 
+// Flatten all series games into one list for All Games
+const ALL_SERIES_GAMES = SERIES.flatMap(s => s.games.map(g => ({...g, seriesName: s.name})));
+const ALL_GAMES = [...GAMES, ...ALL_SERIES_GAMES];
+const TOTAL = ALL_GAMES.length + SERIES.length; // games + series cards
 
 let activeCategory = 'all';
 let favs = JSON.parse(localStorage.getItem('fp_favs') || '[]');
+let seriesOpen = {};
 let isFS = false;
 
 function saveFavs(){ localStorage.setItem('fp_favs', JSON.stringify(favs)); }
@@ -268,17 +284,47 @@ function setCategory(cat, el){
 
 function filterGames(){
   const q = document.getElementById('search').value.toLowerCase();
-  let list = [...GAMES];
-  if(activeCategory==='favs') list = GAMES.filter(g => favs.includes(g.name));
-  else if(activeCategory!=='all') list = GAMES.filter(g => g.cat===activeCategory);
-  if(q) list = list.filter(g => g.name.toLowerCase().includes(q) || g.cat.includes(q));
 
-  document.getElementById('game-count').innerHTML = `<b>${list.length}</b> GAME${list.length!==1?'S':''}`;
+  let standaloneList = [...GAMES];
+  let showSeries = true;
 
-  const mid = Math.ceil(list.length / 2);
-  renderGrid(list.slice(0, mid), 'game-grid');
-  renderGrid(list.slice(mid), 'game-grid-2');
-  document.getElementById('mid-ad-wrap').style.display = list.length > 8 ? 'block' : 'none';
+  if(activeCategory === 'favs'){
+    standaloneList = ALL_GAMES.filter(g => favs.includes(g.name));
+    showSeries = false;
+  } else if(activeCategory !== 'all'){
+    standaloneList = GAMES.filter(g => g.cat === activeCategory);
+    showSeries = false;
+  }
+
+  if(q){
+    standaloneList = standaloneList.filter(g => g.name.toLowerCase().includes(q));
+    showSeries = activeCategory === 'all';
+  }
+
+  // Build items array: mix standalone games and series cards
+  let items = [];
+  if(activeCategory === 'all' && !q){
+    // interleave: show standalone games first, then series cards at the end
+    items = standaloneList.map(g => ({type:'game', data:g}));
+    SERIES.forEach((s,i) => items.push({type:'series', data:s, idx:i}));
+  } else if(showSeries && q){
+    items = standaloneList.map(g => ({type:'game', data:g}));
+    const matchedSeries = SERIES.filter(s =>
+      s.name.toLowerCase().includes(q) ||
+      s.games.some(g => g.name.toLowerCase().includes(q))
+    );
+    matchedSeries.forEach((s,i) => items.push({type:'series', data:s, idx:SERIES.indexOf(s)}));
+  } else {
+    items = standaloneList.map(g => ({type:'game', data:g}));
+  }
+
+  const gameCount = items.filter(i=>i.type==='game').length + items.filter(i=>i.type==='series').reduce((a,s)=>a+s.data.games.length,0);
+  document.getElementById('game-count').innerHTML = `<b>${gameCount}</b> GAME${gameCount!==1?'S':''}`;
+
+  const mid = Math.ceil(items.length / 2);
+  renderItems(items.slice(0, mid), 'game-grid');
+  renderItems(items.slice(mid), 'game-grid-2');
+  document.getElementById('mid-ad-wrap').style.display = items.length > 8 ? 'block' : 'none';
 
   if(activeCategory==='favs' && favs.length===0){
     document.getElementById('game-grid').innerHTML='<div class="no-results"><span class="icon">★</span>NO FAVORITES YET<br><br>TAP THE STAR ON ANY GAME</div>';
@@ -286,33 +332,73 @@ function filterGames(){
   }
 }
 
+function renderItems(items, gridId){
+  const grid = document.getElementById(gridId);
+  if(!items.length){ grid.innerHTML=''; return; }
+  grid.innerHTML = items.map((item, i) => {
+    if(item.type === 'series') return renderSeriesCard(item.data, item.idx, i);
+    return renderGameCard(item.data, i);
+  }).join('');
+}
+
+function renderGameCard(g, i){
+  const isFav = favs.includes(g.name);
+  return `<div class="card" style="animation-delay:${i*40}ms">
+    <button class="fav-btn ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
+    <div class="card-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
+      <span class="thumb-emoji">${g.emoji}</span>
+    </div>
+    <div class="card-info">
+      <div class="card-name">${g.name}</div>
+      <div class="card-meta">
+        <span class="card-cat">${g.cat||g.seriesName||''}</span>
+        <span class="card-stars">${g.stars}</span>
+      </div>
+      <button class="play-btn" onclick="openGame('${g.name}','${g.path}')">▶ PLAY</button>
+    </div>
+  </div>`;
+}
+
+function renderSeriesCard(s, si, i){
+  const isOpen = seriesOpen[si] === true;
+  const gamesHtml = s.games.map((g,gi) => {
+    const isFav = favs.includes(g.name);
+    return `<div class="series-mini-card">
+      <button class="mini-fav ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
+      <div class="mini-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
+        <span class="mini-emoji">${g.emoji}</span>
+      </div>
+      <div class="mini-info">
+        <div class="mini-name">${g.name}</div>
+        <div class="mini-stars">${g.stars}</div>
+        <button class="mini-play" onclick="openGame('${g.name}','${g.path}')">▶ PLAY</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  return `<div class="series-card" style="animation-delay:${i*40}ms">
+    <div class="series-card-header" onclick="toggleSeries(${si})">
+      <span class="series-emoji">${s.emoji}</span>
+      <div class="series-info">
+        <div class="series-title" style="color:${s.color}">${s.name}</div>
+        <div class="series-subtitle">${s.games.length} GAMES · CLICK TO ${isOpen?'COLLAPSE':'EXPAND'}</div>
+      </div>
+      <span class="series-arrow ${isOpen?'open':''}">►</span>
+    </div>
+    <div class="series-games-grid ${isOpen?'':'collapsed'}">${gamesHtml}</div>
+  </div>`;
+}
+
+function toggleSeries(si){
+  seriesOpen[si] = !seriesOpen[si];
+  filterGames();
+}
+
 function toggleFav(name, e){
   e.stopPropagation();
   favs = favs.includes(name) ? favs.filter(f=>f!==name) : [...favs, name];
   saveFavs();
   filterGames();
-}
-
-function renderGrid(games, gridId){
-  const grid = document.getElementById(gridId);
-  if(!games.length){ grid.innerHTML=''; return; }
-  grid.innerHTML = games.map((g,i) => {
-    const isFav = favs.includes(g.name);
-    return `<div class="card" style="animation-delay:${i*40}ms">
-      <button class="fav-btn ${isFav?'active':''}" onclick="toggleFav('${g.name}',event)">${isFav?'★':'☆'}</button>
-      <div class="card-thumb" style="background:${g.bg};" onclick="openGame('${g.name}','${g.path}')">
-        <span class="thumb-emoji">${g.emoji}</span>
-      </div>
-      <div class="card-info">
-        <div class="card-name">${g.name}</div>
-        <div class="card-meta">
-          <span class="card-cat">${g.cat}</span>
-          <span class="card-stars">${g.stars}</span>
-        </div>
-        <button class="play-btn" onclick="openGame('${g.name}','${g.path}')">▶ PLAY</button>
-      </div>
-    </div>`;
-  }).join('');
 }
 
 function openGame(name, path){
@@ -324,10 +410,12 @@ function openGame(name, path){
   document.getElementById('modal').classList.remove('is-fullscreen-bg');
   document.getElementById('fs-btn').textContent = '⛶ FULLSCREEN';
 }
+
 function reloadGame(){
   const frame = document.getElementById('modal-frame');
   frame.src = frame.src;
 }
+
 function toggleFullscreen(){
   isFS = !isFS;
   document.getElementById('modal-inner').classList.toggle('is-fullscreen', isFS);
@@ -344,7 +432,6 @@ function closeModal(e){
 }
 
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(null); });
-
 filterGames();
 </script>
 </body>
